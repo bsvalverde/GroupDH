@@ -27,6 +27,10 @@ public:
     return out;
   }
 
+  bool compare(Elliptic_Curve_Point b) {
+    return this->x == b.x;
+  };
+
 private:
   void jacobian_double();
   void add_jacobian_affine(const Elliptic_Curve_Point &b);

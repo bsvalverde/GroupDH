@@ -848,15 +848,14 @@ public:
     };
 
 	typedef int Group_Id;
-	typedef Group_Diffie_Hellman::Parameters Parameters;
 	typedef Group_Diffie_Hellman::Round_Key Round_Key;
 
 	// Group Diffie-Hellman setup first node Security Bootstrap Control Message
     class GDH_Setup_First: public Control
     {
     public:
-		GDH_Setup_First(const Group_Id & group_id, Region::Space destination, const Parameters & parameters, const Region::Space & next)
-        : Control(GDH_SETUP_FIRST, 0, 0, now(), here(), here()), _destination(destination), _next(next), _parameters(parameters), _group_id(group_id){ }
+		GDH_Setup_First(const Group_Id & group_id, Region::Space destination, const Region::Space & next)
+        : Control(GDH_SETUP_FIRST, 0, 0, now(), here(), here()), _destination(destination), _next(next), _group_id(group_id){ }
 
 		const Group_Id group_id() { return _group_id; }
 
@@ -864,21 +863,18 @@ public:
 
 		const Region::Space & destination() { return _destination; }
 
-        const Parameters & parameters() { return _parameters; }
-
         friend Debug & operator<<(Debug & db, const GDH_Setup_First & m) {
-            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next << ",p=" << m._parameters << ",g=" << m._group_id;
+            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next << ",g=" << m._group_id;
             return db;
         }
         friend OStream & operator<<(OStream & db, const GDH_Setup_First & m) {
-            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next << ",p=" << m._parameters << ",g=" << m._group_id;
+            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next << ",g=" << m._group_id;
             return db;
         }
 
     private:
 		Region::Space _destination; //destination of this message
         Region::Space _next;
-        Parameters _parameters;
 		Group_Id _group_id;
         CRC _crc; //What is CRC? Do we need this here?
     //} __attribute__((packed)); // TODO
@@ -888,8 +884,8 @@ public:
     class GDH_Setup_Intermediate: public Control
     {
     public:
-		GDH_Setup_Intermediate(const Group_Id & group_id, const Region::Space & destination, const Parameters & parameters, const Region::Space & next)
-        : Control(GDH_SETUP_INTERMEDIATE, 0, 0, now(), here(), here()), _destination(destination), _next(next), _parameters(parameters), _group_id(group_id){ }
+		GDH_Setup_Intermediate(const Group_Id & group_id, const Region::Space & destination, const Region::Space & next)
+        : Control(GDH_SETUP_INTERMEDIATE, 0, 0, now(), here(), here()), _destination(destination), _next(next), _group_id(group_id){ }
 
 		const Group_Id group_id() { return _group_id; }
 
@@ -897,21 +893,18 @@ public:
 
 		const Region::Space & destination() { return _destination; }
 
-        const Parameters & parameters() { return _parameters; }
-
         friend Debug & operator<<(Debug & db, const GDH_Setup_Intermediate & m) {
-            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next << ",p=" << m._parameters << ",g=" << m._group_id;
+            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next << ",g=" << m._group_id;
             return db;
         }
         friend OStream & operator<<(OStream & db, const GDH_Setup_Intermediate & m) {
-            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next << ",p=" << m._parameters << ",g=" << m._group_id;
+            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next << ",g=" << m._group_id;
             return db;
         }
 
     private:
 		Region::Space _destination;
         Region::Space _next;
-        Parameters _parameters;
 		Group_Id _group_id;
         CRC _crc; //What is CRC? Do we need this here?
     //} __attribute__((packed)); // TODO
@@ -921,8 +914,8 @@ public:
     class GDH_Setup_Last: public Control
     {
     public:
-		GDH_Setup_Last(const Group_Id & group_id, const Region::Space & destination, const Parameters & parameters, const Region::Space & next)
-        : Control(GDH_SETUP_LAST, 0, 0, now(), here(), here()), _destination(destination), _next(next), _parameters(parameters), _group_id(group_id){ }
+		GDH_Setup_Last(const Group_Id & group_id, const Region::Space & destination, const Region::Space & next)
+        : Control(GDH_SETUP_LAST, 0, 0, now(), here(), here()), _destination(destination), _next(next), _group_id(group_id){ }
 
 		const Group_Id group_id() { return _group_id; }
 
@@ -930,22 +923,19 @@ public:
 
 		const Region::Space & destination() { return _destination; }
 
-        const Parameters & parameters() { return _parameters; }
-
         friend Debug & operator<<(Debug & db, const GDH_Setup_Last & m) {
 			//not printing next
-            db << reinterpret_cast<const Control &>(m) << ",p=" << m._parameters << ",g=" << m._group_id;
+            db << reinterpret_cast<const Control &>(m) << ",g=" << m._group_id;
             return db;
         }
         friend OStream & operator<<(OStream & db, const GDH_Setup_Last & m) {
-            db << reinterpret_cast<const Control &>(m) << ",p=" << m._parameters << ",g=" << m._group_id;
+            db << reinterpret_cast<const Control &>(m) << ",g=" << m._group_id;
             return db;
         }
 
     private:
 		Region::Space _destination;
         Region::Space _next; //TODO GDH Should we use something else instead of a linked list?
-        Parameters _parameters;
 		Group_Id _group_id;
         CRC _crc; //What is CRC? Do we need this here?
     //} __attribute__((packed)); // TODO

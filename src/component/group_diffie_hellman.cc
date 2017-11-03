@@ -5,21 +5,35 @@
 
 __BEGIN_SYS
 
-Group_Diffie_Hellman::Private_Key Group_Diffie_Hellman::generate_private_key(const Number& q) const
+const unsigned char Group_Diffie_Hellman::_default_base_point_x[SECRET_SIZE] =
 {
-	Group_Diffie_Hellman::Private_Key generated;
-	do{
-		generated = Random::random() % q-1;
-	} while(generated == 0 || generated == 1 || gcd(generated, q-1) > 1);
+    '\x86', '\x5B', '\x2C', '\xA5',
+    '\x7C', '\x60', '\x28', '\x0C',
+    '\x2D', '\x9B', '\x89', '\x8B',
+    '\x52', '\xF7', '\x1F', '\x16'
+};
 
-	return generated;
+const unsigned char Group_Diffie_Hellman::_default_base_point_y[SECRET_SIZE] =
+{
+    '\x83', '\x7A', '\xED', '\xDD',
+    '\x92', '\xA2', '\x2D', '\xC0',
+    '\x13', '\xEB', '\xAF', '\x5B',
+    '\x39', '\xC8', '\x5A', '\xCF'
+};
+
+Group_Diffie_Hellman::Group_Diffie_Hellman()
+{
+    new (&_base_point.x) Bignum(_default_base_point_x, SECRET_SIZE);
+    new (&_base_point.y) Bignum(_default_base_point_y, SECRET_SIZE);
+    _base_point.z = 1;
+    _private_key.randomize();
 }
 
 Group_Diffie_Hellman::Round_Key Group_Diffie_Hellman::insert_key(Group_Diffie_Hellman::Round_Key round_key) const
 {
 	db<Diffie_Hellman>(TRC) << "Diffie_Hellman::round_key(round=" << round_key << ",priv=" << _private_key << ")" << endl;
 
-	round_key = mod_exp(round_key, _private_key, _parameters.q());
+	round_key *= _private_key;
 
 	db<Diffie_Hellman>(INF) << "Diffie_Hellman: round key = " << round_key << endl;
 
@@ -28,10 +42,10 @@ Group_Diffie_Hellman::Round_Key Group_Diffie_Hellman::insert_key(Group_Diffie_He
 
 Group_Diffie_Hellman::Round_Key Group_Diffie_Hellman::insert_key() const
 {
-	db<Diffie_Hellman>(TRC) << "Diffie_Hellman::round_key(round=" << _parameters.base() << ",priv=" << _private_key << ")" << endl;
+	db<Diffie_Hellman>(TRC) << "Diffie_Hellman::round_key(round=" << _base_point << ",priv=" << _private_key << ")" << endl;
 
-	Round_Key round_key(_parameters.base());
-	round_key = mod_exp(round_key, _private_key, _parameters.q());	
+	Round_Key round_key = _base_point;
+	round_key *= _private_key;	
 
 	db<Diffie_Hellman>(INF) << "Diffie_Hellman: round key = " << round_key << endl;
 
@@ -42,7 +56,11 @@ Group_Diffie_Hellman::Round_Key Group_Diffie_Hellman::remove_key(Group_Diffie_He
 {
 	db<Diffie_Hellman>(TRC) << "Diffie_Hellman::round_key(round=" << round_key << ",priv=" << _private_key << ")" << endl;
 
-	round_key = mod_exp(round_key, inverted_private_key(), _parameters.q());
+	Bignum::changeMod();
+	Bignum inverted_private_key = _private_key;
+	inverted_private_key.invert();
+	Bignum::changeMod();
+	round_key *= inverted_private_key;
 
 	db<Diffie_Hellman>(INF) << "Diffie_Hellman: round key = " << round_key << endl;
 

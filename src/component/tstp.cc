@@ -272,14 +272,13 @@ Group_Id TSTP::GDH_Security::begin_group_diffie_hellman(Simple_List<Region::Spac
 	}
 
 	_gdh = Group_Diffie_Hellman();
-	Parameters params = _gdh.parameters();
 
 	Region::Space *last = nodes.remove_tail()->object();
 
 	auto gw = Region::Space(TSTP::here());
 
 	Buffer* resp = TSTP::alloc(sizeof(GDH_Setup_Last));
-	new (resp->frame()) GDH_Setup_Last(group_id, *last, params, gw);
+	new (resp->frame()) GDH_Setup_Last(group_id, *last, gw);
 	TSTP::marshal(resp);
 	kout << "Sending Setup Last to " << *last << " with next: " << gw << endl;
 	TSTP::_nic->send(resp);
@@ -305,7 +304,7 @@ Group_Id TSTP::GDH_Security::begin_group_diffie_hellman(Simple_List<Region::Spac
 		for(auto it = nodes.begin(); it; it++) {
 			resp = TSTP::alloc(sizeof(GDH_Setup_Intermediate));
 			Region::Space *current = it->object();
-			new (resp->frame()) GDH_Setup_Intermediate(group_id, *current, params, *next);
+			new (resp->frame()) GDH_Setup_Intermediate(group_id, *current, *next);
 			TSTP::marshal(resp);
 			kout << "Sending Setup Intermediate to " << *current << endl;
 			TSTP::_nic->send(resp);
@@ -316,7 +315,7 @@ Group_Id TSTP::GDH_Security::begin_group_diffie_hellman(Simple_List<Region::Spac
 	Region::Space* firsts_next = nodes.head()->object();
 
 	resp = TSTP::alloc(sizeof(GDH_Setup_First));
-	new (resp->frame()) GDH_Setup_First(group_id, *first, params, *firsts_next);
+	new (resp->frame()) GDH_Setup_First(group_id, *first, *firsts_next);
 	TSTP::marshal(resp);
 	kout << "Sending Setup First to " << *first << endl;
 	TSTP::_nic->send(resp);
@@ -346,7 +345,7 @@ void TSTP::GDH_Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer 
 				kout << "TSTP::GDH_Security::update(): GDH SETUP FIRST message received from "  << author << endl;
 				GDH_Setup_First* message = buf->frame()->data<GDH_Setup_First>();
 				Region::Space next = message->next();
-				_gdh = Group_Diffie_Hellman(message->parameters());
+				_gdh = Group_Diffie_Hellman();
 				Round_Key round_key = _gdh.insert_key();
 				//uses the randomly generated private key in the GDH object creation
 				_GDH_node_type = GDH_FIRST;
@@ -363,7 +362,7 @@ void TSTP::GDH_Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer 
 				db<TSTP>(TRC) << "TSTP::GDH_Security::update(): GDH SETUP INTERMEDIATE message received" << endl;
 				kout << "TSTP::GDH_Security::update(): GDH SETUP INTERMEDIATE message received from " << author << endl;
 				GDH_Setup_Intermediate* message = buf->frame()->data<GDH_Setup_Intermediate>();
-				_gdh = Group_Diffie_Hellman(message->parameters());
+				_gdh = Group_Diffie_Hellman();
 				_GDH_next = Simple_List<Region::Space>(); //only correct for the first group id
 				List_Elements::Singly_Linked<Region::Space> *next = new List_Elements::Singly_Linked<Region::Space>(new Region::Space(message->next()));
 				_GDH_next.insert(next);
@@ -378,7 +377,7 @@ void TSTP::GDH_Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer 
 				kout << "TSTP::GDH_Security::update(): GDH SETUP LAST message received from " << author << " with next = " << message->next() << endl;
 				List_Elements::Singly_Linked<Region::Space> *next = new List_Elements::Singly_Linked<Region::Space>(new Region::Space(message->next()));
 				_GDH_next.insert(next);
-				_gdh = Group_Diffie_Hellman(message->parameters());
+				_gdh = Group_Diffie_Hellman();
 				_GDH_node_type = GDH_LAST;
 				_GDH_state = GDH_WAITING_NEXT; //this node is waiting to receive all his next nodes
 			}
