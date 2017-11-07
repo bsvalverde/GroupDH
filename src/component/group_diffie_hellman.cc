@@ -1,7 +1,6 @@
 // EPOS Group Diffie-Hellman Component Implementation
 
 #include <group_diffie_hellman.h>
-#include <utility/random.h>
 
 __BEGIN_SYS
 
