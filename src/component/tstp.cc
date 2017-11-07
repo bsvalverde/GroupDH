@@ -455,11 +455,11 @@ void TSTP::GDH_Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer 
 				} else if(_GDH_state == GDH_WAITING_FINAL) {
 					Round_Key round_key = message->round_key();
 					round_key = _gdh.insert_key(round_key);
-					_GDH_key = round_key; //final key!
+					_GDH_key = round_key.numerize(); //final key!
 					kout << "We calculated the final key! key = " << _GDH_key << endl;
 				}
 			} else { /*gateway*/
-				_GDH_key = _gdh.insert_key(message->round_key());
+				_GDH_key = _gdh.insert_key(message->round_key()).numerize();
 				kout << "Gateway calculated his final key! Key = " << _GDH_key << endl;
 			}
 		} break;

@@ -106,7 +106,7 @@ int main()
         cout << "last final " << last_final << endl;
         cout << "gateway final " << gateway_final << endl;
     
-        bool ok = gateway_final.compare(first_final) && first_final.compare(intermediate_final) && intermediate_final.compare(last_final);
+        bool ok = gateway_final.numerize() == first_final.numerize() && first_final.numerize() == intermediate_final.numerize() && intermediate_final.numerize() == last_final.numerize();
         // bool ok1 = gateway_final.x == first_final.x && gateway_final.y == first_final.y && gateway_final.z == first_final.z;
         // bool ok2 = first_final.x == intermediate_final.x && first_final.y == intermediate_final.y && first_final.z == intermediate_final.z;
         // bool ok3 = intermediate_final.x == last_final.x && intermediate_final.y == last_final.y && intermediate_final.z == last_final.z;

@@ -27,8 +27,11 @@ public:
     return out;
   }
 
-  bool compare(Elliptic_Curve_Point b) {
-    return this->x == b.x;
+  Bignum numerize(){
+    Bignum r;
+    r = this->x;
+    r ^= this->y;
+    return r;
   };
 
 private:
