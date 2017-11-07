@@ -3,7 +3,6 @@
 #ifndef __group_diffie_hellman_h
 #define __group_diffie_hellman_h
 
-#include <system/config.h>
 #include <utility/bignum.h>
 #include <elliptic_curve_point.h>
 #include <cipher.h>
