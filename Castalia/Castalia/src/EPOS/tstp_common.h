@@ -11,6 +11,7 @@
 #include <epos_common.h>
 #include <array.h>
 #include <diffie_hellman.h>
+#include <group_diffie_hellman.h>
 
 __BEGIN_SYS
 
@@ -60,6 +61,26 @@ public:
         REPORT = 4,
         KEEP_ALIVE = 5,
         EPOCH = 6,
+        GDH_SETUP_FIRST = 7,
+        GDH_SETUP_INTERMEDIATE = 8,
+        GDH_SETUP_LAST = 9,
+        GDH_ROUND = 10,
+        GDH_BROADCAST = 11,
+        GDH_RESPONSE = 12,
+    };
+
+    enum GDH_State {
+        GDH_WAITING_NEXT = 0,
+        GDH_WAITING_EXP = 1,
+        GDH_WAITING_POP = 2,
+        GDH_WAITING_FINAL = 3,
+        GDH_WAITING_GW = 4,
+    };
+
+    enum GDH_Node_Type {
+        GDH_FIRST = 0,
+        GDH_INTERMEDIATE = 1,
+        GDH_LAST = 2,
     };
 
     // Scale for local network's geographic coordinates
@@ -190,6 +211,7 @@ public:
     typedef _UTIL::Array<unsigned char, 16> OTP;
     typedef _UTIL::Array<unsigned char, 16> Message_Auth;
     typedef Diffie_Hellman::Public_Key Public_Key;
+    typedef Group_Diffie_Hellman::Round_Key Round_Key;
 
     // Packet Header
     template<Scale S>

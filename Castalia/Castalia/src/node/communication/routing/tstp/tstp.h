@@ -16,6 +16,7 @@
 #include <array.h>
 #include <list.h>
 #include <diffie_hellman.h>
+#include <group_diffie_hellman.h>
 #include <poly1305.h>
 
 __USING_SYS
@@ -103,6 +104,24 @@ public:
                             break;
                         case EPOCH:
                             db << reinterpret_cast<const Epoch &>(p);
+                            break;
+                        case GDH_SETUP_FIRST:
+                            db << reinterpret_cast<const GDH_Setup_First &>(p);
+                            break;
+                        case GDH_SETUP_INTERMEDIATE:
+                            db << reinterpret_cast<const GDH_Setup_Intermediate &>(p);
+                            break;
+                        case GDH_SETUP_LAST:
+                            db << reinterpret_cast<const GDH_Setup_Last &>(p);
+                            break;
+                        case GDH_ROUND:
+                            db << reinterpret_cast<const GDH_Round &>(p);
+                            break;
+                        case GDH_BROADCAST:
+                            db << reinterpret_cast<const GDH_Broadcast &>(p);
+                            break;
+                        case GDH_RESPONSE:
+                            db << reinterpret_cast<const GDH_Response &>(p);
                             break;
                         default:
                             break;
@@ -356,6 +375,147 @@ public:
         Global_Coordinates _coordinates;
         CRC _crc;
     } __attribute__((packed));
+
+        // Group Diffie-Hellman setup first node Security Bootstrap Control Message
+    class GDH_Setup_First: public Control
+    {
+    public:
+        GDH_Setup_First(const Region::Space & destination, const Region::Space & next)
+        //: Control(GDH_SETUP_FIRST, 0, 0, now(), here(), here()), _destination(destination), _next(next), _group_id(group_id){ }
+        : Control(GDH_SETUP_FIRST, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination), _next(next){ }
+
+        const Region::Space & next() { return _next; }
+
+        const Region::Space & destination() { return _destination; }
+
+        friend OStream & operator<<(OStream & db, const GDH_Setup_First & m) {
+            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next;
+            return db;
+        }
+
+    private:
+        Region::Space _destination; //destination of this message
+        Region::Space _next;
+        CRC _crc; //What is CRC? Do we need this here?
+    //} __attribute__((packed)); // TODO
+    };
+
+    // Group Diffie-Hellman setup intermediate node Security Bootstrap Control Message
+    class GDH_Setup_Intermediate: public Control
+    {
+    public:
+        GDH_Setup_Intermediate(const Region::Space & destination, const Region::Space & next)
+        //: Control(GDH_SETUP_INTERMEDIATE, 0, 0, now(), here(), here()), _destination(destination), _next(next), _group_id(group_id){ }
+        : Control(GDH_SETUP_INTERMEDIATE, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination), _next(next){ }
+
+        const Region::Space & next() { return _next; }
+
+        const Region::Space & destination() { return _destination; }
+
+        friend OStream & operator<<(OStream & db, const GDH_Setup_Intermediate & m) {
+            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next;
+            return db;
+        }
+
+    private:
+        Region::Space _destination;
+        Region::Space _next;
+        CRC _crc; //What is CRC? Do we need this here?
+    //} __attribute__((packed)); // TODO
+    };
+
+    // Group Diffie-Hellman setup last node Security Bootstrap Control Message
+    class GDH_Setup_Last: public Control
+    {
+    public:
+        GDH_Setup_Last(const Region::Space & destination)
+        //: Control(GDH_SETUP_LAST, 0, 0, now(), here(), here()), _destination(destination), _next(next), _group_id(group_id){ }
+        : Control(GDH_SETUP_LAST, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination) { }
+
+        const Region::Space & destination() { return _destination; }
+
+        friend OStream & operator<<(OStream & db, const GDH_Setup_Last & m) {
+            db << reinterpret_cast<const Control &>(m);
+            return db;
+        }
+
+    private:
+        Region::Space _destination;
+        CRC _crc; //What is CRC? Do we need this here?
+    //} __attribute__((packed)); // TODO
+    } ;
+
+    // Group Diffie-Hellman round Security Bootstrap Control Message
+    class GDH_Round: public Control
+    {
+    public:
+        GDH_Round(const Region::Space & destination, const Round_Key & round_key)
+        //: Control(GDH_ROUND, 0, 0, now(), here(), here()), _destination(destination), _group_id(group_id), _round_key(round_key){ }
+        : Control(GDH_ROUND, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination), _round_key(round_key){ }
+
+        const Region::Space & destination() { return _destination; }
+
+        Round_Key round_key() { return _round_key; }
+
+        friend OStream & operator<<(OStream & db, const GDH_Round & m) {
+            db << reinterpret_cast<const Control &>(m) << ",r=" << m._round_key;
+            return db;
+        }
+
+    private:
+        Region::Space _destination;
+        Round_Key _round_key;
+        CRC _crc; //What is CRC? Do we need this here?
+    //} __attribute__((packed)); // TODO
+    };
+
+    // Group Diffie-Hellman Broadcast Security Bootstrap Control Message
+    class GDH_Broadcast: public Control
+    {
+    public:
+        GDH_Broadcast(const Region::Space & destination, const Round_Key & round_key)
+        //: Control(GDH_BROADCAST, 0, 0, now(), here(), here()), _destination(destination), _group_id(group_id), _round_key(round_key){ }
+        : Control(GDH_BROADCAST, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination), _round_key(round_key){ }
+
+        const Region::Space & destination() { return _destination; }
+
+        Round_Key round_key() { return _round_key; }
+
+        friend OStream & operator<<(OStream & db, const GDH_Broadcast & m) {
+            db << reinterpret_cast<const Control &>(m) << ",r=" << m._round_key;
+            return db;
+        }
+
+    private:
+        Region::Space _destination;
+        Round_Key _round_key;
+        CRC _crc; //What is CRC? Do we need this here?
+    //} __attribute__((packed)); // TODO
+    };
+
+    // Group Diffie-Hellman Response Security Bootstrap Control Message
+    class GDH_Response: public Control
+    {
+    public:
+        GDH_Response(const Region::Space & destination, const Round_Key & round_key)
+        //: Control(GDH_RESPONSE, 0, 0, now(), here(), here()), _destination(destination), _group_id(group_id), _round_key(round_key){ }
+        : Control(GDH_RESPONSE, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination), _round_key(round_key){ }
+
+        const Region::Space & destination() { return _destination; }
+
+        Round_Key round_key() { return _round_key; }
+
+        friend OStream & operator<<(OStream & db, const GDH_Response & m) {
+            db << reinterpret_cast<const Control &>(m) << ",r=" << m._round_key;
+            return db;
+        }
+
+    private:
+        Region::Space _destination;
+        Round_Key _round_key;
+        CRC _crc; //What is CRC? Do we need this here?
+    //} __attribute__((packed)); // TODO
+    };
 
     // TSTP Smart Data bindings
     // Interested (binder between Interest messages and Smart Data)
@@ -1102,6 +1262,8 @@ public:
             return 0;
         }
 
+        void begin_group_diffie_hellman();
+
     private:
         Cipher _cipher;
         Node_ID _id;
@@ -1115,6 +1277,10 @@ public:
         unsigned int _dh_requests_open;
         TSTP * _tstp;
         bool _bootstrapped;
+        Group_Diffie_Hellman _gdh;
+        GDH_State _GDH_state;
+        GDH_Node_Type _GDH_node_type;
+        Region::Space _GDH_next;
     };
 
     // TSTP Life Keeper explicitly asks for Metadata whenever it's needed
@@ -1220,6 +1386,30 @@ private:
                     }
                     case EPOCH: {
                         return buf->frame()->data<Epoch>()->destination();
+                    }
+                    case GDH_SETUP_FIRST: {
+                        Region::Space destination = buf->frame()->data<GDH_Setup_First>()->destination();
+                        return Region(destination.center, destination.radius, buf->frame()->data<Header>()->time(), -1); //TODO is -1 okay?
+                    }
+                    case GDH_SETUP_INTERMEDIATE: {
+                        Region::Space destination = buf->frame()->data<GDH_Setup_Intermediate>()->destination();
+                        return Region(destination.center, destination.radius, buf->frame()->data<Header>()->time(), -1); //TODO is -1 okay?
+                    }
+                    case GDH_SETUP_LAST: {
+                        Region::Space destination = buf->frame()->data<GDH_Setup_Last>()->destination();
+                        return Region(destination.center, destination.radius, buf->frame()->data<Header>()->time(), -1); //TODO is -1 okay?
+                    }
+                    case GDH_ROUND: {
+                        Region::Space destination = buf->frame()->data<GDH_Round>()->destination();
+                        return Region(destination.center, destination.radius, buf->frame()->data<Header>()->time(), -1); //TODO is -1 okay?
+                    }
+                    case GDH_BROADCAST: {
+                        Region::Space destination = buf->frame()->data<GDH_Broadcast>()->destination();
+                        return Region(destination.center, destination.radius, buf->frame()->data<Header>()->time(), -1); //TODO is -1 okay?
+                    }
+                    case GDH_RESPONSE: {
+                        Region::Space destination = buf->frame()->data<GDH_Response>()->destination();
+                        return Region(destination.center, destination.radius, buf->frame()->data<Header>()->time(), -1); //TODO is -1 okay?
                     }
                 }
             default:

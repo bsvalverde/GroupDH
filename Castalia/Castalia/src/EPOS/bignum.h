@@ -237,6 +237,15 @@ public:
         }
     }
 
+    static void changeMod() {
+        Word aux;
+        for(unsigned int i = 0; i < DIGITS; i++){
+            aux[i] = _mod.data[i];
+            _mod.data[i] = _order.data[i];
+            _order.data[i] = aux[i];
+        }
+    }
+
     friend Debug &operator<<(Debug & out, const Bignum & b) {
         unsigned int i;
         out << '[';
@@ -391,8 +400,9 @@ private:
 private:
     Word _data;
 
-    static const _Word _mod;
+    static /*const*/ _Word _mod;
     static const _Barrett _barrett_u;
+    static /*const*/ _Word _order;
 };
 
 __END_UTIL
