@@ -782,7 +782,7 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
 
                         GDH_Round * message = buf->frame()->data<GDH_Round>();
                         Round_Key round_key = message->round_key();
-                        if(!_tstp->sink) {
+                        if(!_tstp->_sink) {
                             _tstp->trace() << "TSTP::GDH_Security::update(): GDH_ROUND message received" << endl;
                             switch(_GDH_node_type) {
 
