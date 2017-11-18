@@ -786,11 +786,12 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
 
                     case GDH_SETUP_LAST: {
 
-                        if(_tstp->sink) {
+                        if(!_tstp->sink) {
                             _tstp->trace() << "TSTP::GDH_Security::update(): GDH SETUP LAST message received" << endl;
                             _gdh = Group_Diffie_Hellman();
                             _GDH_node_type = GDH_LAST;
-                            _GDH_state = GDH_WAITING_NEXT; //this node is waiting to receive all his next nodes
+                            _GDH_state = GDH_WAITING_EXP;
+
                         }
                     } break;
 
@@ -798,7 +799,7 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
 
                         GDH_Round * message = buf->frame()->data<GDH_Round>();
                         Round_Key round_key = message->round_key();
-                        if(_tstp->sink) {
+                        if(!_tstp->sink) {
                             _tstp->trace() << "TSTP::GDH_Security::update(): GDH ROUND message received" << endl;
                             switch(_GDH_node_type) {
 
