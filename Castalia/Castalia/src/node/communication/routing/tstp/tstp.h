@@ -1378,10 +1378,6 @@ private:
                         return Region(sink(), 0, buf->frame()->data<Report>()->time(), -1/*TODO*/);
                     }
                     case KEEP_ALIVE: {
-                        Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
-                    
                         while(true) {
                             Coordinates fake(here().x + (Random::random() % (RADIO_RANGE / 3)), here().y + (Random::random() % (RADIO_RANGE / 3)), (here().z + Random::random() % (RADIO_RANGE / 3)));
                             if(fake != here())
@@ -1394,58 +1390,52 @@ private:
                     case GDH_SETUP_FIRST: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(sink(), 0, origin, deadline);
                     }
                     case GDH_SETUP_INTERMEDIATE: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(sink(), 0, origin, deadline);
                     }
                     case GDH_SETUP_LAST: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(sink(), 0, origin, deadline);
                     }
                     case GDH_ROUND: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(sink(), 0, origin, deadline);
                     }
                     case GDH_BROADCAST: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(sink(), 0, origin, deadline);
                     }
                     case GDH_RESPONSE: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(sink(), 0, origin, deadline);
                     }
                 }
             default:
                 //db<TSTP>(ERR) << "TSTP::destination(): ERROR: unrecognized frame type " << buf->frame()->data<Frame>()->type() << endl;
-                return Region(TSTP::here()
-                        Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
-                    
+                return Region(TSTP::here(), 0, TSTP::now() - 2, TSTP::now() - 1);
+        }
+    }
+
     void keep_alive() {
-        trace
-                        Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
-                     keep_alive = new (buf->frame()->data<Keep_Alive>()) Keep_Alive;
+        trace() << "TSTP::keep_alive()" << endl;
+        Buffer * buf = alloc(sizeof(Keep_Alive));
+        Keep_Alive * keep_alive = new (buf->frame()->data<Keep_Alive>()) Keep_Alive;
 //        id++;
-//        id = id & 
-                        Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
-                    ;
-        buf->deadline = now() + Life_Kee
-                        Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
-                    
+//        id = id & Microframe::ID_MAX;
+//        keep_alive->_crc = id;
+        marshal(buf);
+        buf->deadline = now() + Life_Keeper::PERIOD;
+        trace() << "TSTP::keep_alive():keep_alive = " << keep_alive << " => " << (*keep_alive) << endl;
+        _nic->send(buf);
+    }
 
     void marshal(Buffer * buf) {
         _locator->marshal(buf);
