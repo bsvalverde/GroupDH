@@ -865,6 +865,7 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
                     } break;
                     case GDH_RESPONSE: {
                         if(_tstp->_sink) {
+                            GDH_Response* message = buf->frame()->data<GDH_Response>();
                             _tstp->trace() << "TSTP::GDH_Security::update(): GDH RESPONSE message received" << endl;
                             Region::Space origin = buf->frame()->data<Header>()->origin(); //source of the message. Address
                             Round_Key round_key = message->round_key();
