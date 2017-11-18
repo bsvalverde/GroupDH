@@ -767,6 +767,7 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
                             Buffer* resp = _tstp->alloc(sizeof(GDH_Round));
                             new (resp->frame()) GDH_Round(next, round_key);
                             _tstp->marshal(resp);
+                            _tstp->trace() << "TSTP::Security::update(): Sending GDH_Round to " << next << endl;
                             _tstp->_nic->send(resp);
                         }
                     } break;
@@ -807,6 +808,7 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
                                     Buffer* resp = _tstp->alloc(sizeof(GDH_Round));
                                     new (resp->frame()) GDH_Round(_GDH_next, round_key);
                                     _tstp->marshal(resp);
+                                    _tstp->trace() << "TSTP::Security::update(): Sending GDH_Round to " << _GDH_next << endl;
                                     _tstp->_nic->send(resp);
                                     _GDH_state = GDH_WAITING_POP;
                                 } break;
@@ -814,6 +816,7 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
                                 case GDH_LAST: {
                                     _tstp->trace() << "Last node received GDH_ROUND" << endl;
                                     round_key = _gdh.insert_key(round_key);
+                                    _tstp->trace() << "TSTP::Security::update(): Broadcasting round key" << endl;
                                     for(Peers::Element * el = _trusted_peers.head(); el; el = el->next()) {
                                         Buffer * resp = _tstp->alloc(sizeof(GDH_Broadcast));
                                         new (resp->frame()) GDH_Broadcast(Region::Space(el->object()->valid().center, el->object()->valid().radius), round_key);
@@ -950,9 +953,21 @@ void TSTP::Security::begin_group_diffie_hellman()
         for(unsigned int j = i; j < _tstp->_units; j++) {
             if (i != j){
                 TSTP * t = _tstp->_instances[i];
+                VirtualMobilityManager *nodeMobilityModule = check_and_cast<VirtualMobilityManager*>(t->getParentModule()->getParentModule()->getParentModule()->getSubmodule("node", t->self)->getSubmodule("MobilityManager"));
+                Coordinates::Number x = nodeMobilityModule->getLocation().x * 100.0;
+                Coordinates::Number y = nodeMobilityModule->getLocation().y * 100.0;
+                Coordinates::Number z = nodeMobilityModule->getLocation().z * 100.0;
+                Coordinates here = Coordinates(x, y, z);
+                Peer * p = new Peer(_id, Region(here, 0, 0, -1), t);
+                
                 TSTP * t2 = _tstp->_instances[j];
-                Peer * p = new Peer(_id, Region(t->here(), 0, 0, -1), t);
-                Peer * p2 = new Peer(_id, Region(t2->here(), 0, 0, -1), t2);
+                nodeMobilityModule = check_and_cast<VirtualMobilityManager*>(t2->getParentModule()->getParentModule()->getParentModule()->getSubmodule("node", t2->self)->getSubmodule("MobilityManager"));
+                x = nodeMobilityModule->getLocation().x * 100.0;
+                y = nodeMobilityModule->getLocation().y * 100.0;
+                z = nodeMobilityModule->getLocation().z * 100.0;
+                here = Coordinates(x, y, z);
+                Peer * p2 = new Peer(_id, Region(here, 0, 0, -1), t2);
+                
                 t->_security->_trusted_peers.insert(p2->link());
                 t2->_security->_trusted_peers.insert(p->link());
             }
