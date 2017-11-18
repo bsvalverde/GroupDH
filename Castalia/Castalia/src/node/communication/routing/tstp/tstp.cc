@@ -752,78 +752,63 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
                         }
                     } break;
 
-                    case GDH_SETUP_FIRST: {
+                    case GDH_STARTUP: {
 
                         if(!_tstp->_sink) {
-                            _tstp->trace() << "TSTP::Security::update(): GDH SETUP FIRST message received" << endl;
-                            GDH_Setup_First* message = buf->frame()->data<GDH_Setup_First>();
-                            Region::Space next = message->next();
+                            _tstp->trace() << "TSTP::Security::update(): GDH_STARTUP message received" << endl;
                             _gdh = Group_Diffie_Hellman();
                             Round_Key round_key = _gdh.insert_key();
                             //uses the randomly generated private key in the GDH object creation
                             _GDH_node_type = GDH_FIRST;
                             _GDH_state = GDH_WAITING_POP;
                             //this node is waiting to remove its key from the round key
+                            unsigned int next = (_tstp->_instances[_tstp->_unit + 1u]->_sink ? _tstp->_unit + 2u : _tstp->_unit + 1u);
+                            TSTP * t = _tstp->_instances[next];
                             Buffer* resp = _tstp->alloc(sizeof(GDH_Round));
-                            new (resp->frame()) GDH_Round(next, round_key);
+                            new (resp->frame()) GDH_Round(Region::Space(t->here(), 0), round_key);
                             _tstp->marshal(resp);
-                            _tstp->trace() << "TSTP::Security::update(): Sending GDH_Round to " << next << endl;
+                            _tstp->trace() << "TSTP::Security::update(): Sending GDH_Round to " << t->here() << endl;
                             _tstp->_nic->send(resp);
-                        }
-                    } break;
-
-                    case GDH_SETUP_INTERMEDIATE: {
-
-                        if(!_tstp->sink) {
-                            _tstp->trace() << "TSTP::GDH_Security::update(): GDH SETUP INTERMEDIATE message received" << endl;
-                            GDH_Setup_Intermediate* message = buf->frame()->data<GDH_Setup_Intermediate>();
-                            _gdh = Group_Diffie_Hellman();
-                            _GDH_next = message->next();
-                            _GDH_node_type = GDH_INTERMEDIATE;
-                            _GDH_state = GDH_WAITING_EXP; //this node is waiting to exponentiate the round key
-                        }
-                    } break;
-
-                    case GDH_SETUP_LAST: {
-
-                        if(!_tstp->sink) {
-                            _tstp->trace() << "TSTP::GDH_Security::update(): GDH SETUP LAST message received" << endl;
-                            _gdh = Group_Diffie_Hellman();
-                            _GDH_node_type = GDH_LAST;
-                            _GDH_state = GDH_WAITING_EXP;
-
                         }
                     } break;
 
                     case GDH_ROUND: {
 
+                        if(_tstp->_unit == _tstp->_units - 1u || (_tstp->_unit == _tstp->_units - 2u && _tstp->_instances[_tstp->_units - 1u]->_sink)){
+                            _GDH_node_type = GDH_LAST;
+                        } else {
+                            _GDH_node_type = GDH_INTERMEDIATE;
+                        }
+
                         GDH_Round * message = buf->frame()->data<GDH_Round>();
                         Round_Key round_key = message->round_key();
                         if(!_tstp->sink) {
-                            _tstp->trace() << "TSTP::GDH_Security::update(): GDH ROUND message received" << endl;
+                            _tstp->trace() << "TSTP::GDH_Security::update(): GDH_ROUND message received" << endl;
                             switch(_GDH_node_type) {
 
                                 case GDH_INTERMEDIATE: {
+                                    _gdh = Group_Diffie_Hellman();
                                 //calculate new partial key and send to next
                                     round_key = _gdh.insert_key(round_key);
+                                    unsigned int next = (_tstp->_instances[_tstp->_unit + 1u]->_sink ? _tstp->_unit + 2u : _tstp->_unit + 1u);
+                                    TSTP * t = _tstp->_instances[next];
                                     Buffer* resp = _tstp->alloc(sizeof(GDH_Round));
-                                    new (resp->frame()) GDH_Round(_GDH_next, round_key);
+                                    new (resp->frame()) GDH_Round(Region::Space(t->here(), 0), round_key);
                                     _tstp->marshal(resp);
-                                    _tstp->trace() << "TSTP::Security::update(): Sending GDH_Round to " << _GDH_next << endl;
+                                    _tstp->trace() << "TSTP::Security::update(): Sending GDH_Round to " << t->here() << endl;
                                     _tstp->_nic->send(resp);
                                     _GDH_state = GDH_WAITING_POP;
                                 } break;
 
                                 case GDH_LAST: {
+                                    _gdh = Group_Diffie_Hellman();
                                     _tstp->trace() << "Last node received GDH_ROUND" << endl;
                                     round_key = _gdh.insert_key(round_key);
                                     _tstp->trace() << "TSTP::Security::update(): Broadcasting round key" << endl;
-                                    for(Peers::Element * el = _trusted_peers.head(); el; el = el->next()) {
-                                        Buffer * resp = _tstp->alloc(sizeof(GDH_Broadcast));
-                                        new (resp->frame()) GDH_Broadcast(Region::Space(el->object()->valid().center, el->object()->valid().radius), round_key);
-                                        _tstp->marshal(resp);
-                                        _tstp->_nic->send(resp);
-                                    }
+                                    Buffer * resp = _tstp->alloc(sizeof(GDH_Broadcast));
+                                    new (resp->frame()) GDH_Broadcast(Region::Space(_tstp->sink(), 300), round_key);
+                                    _tstp->marshal(resp);
+                                    _tstp->_nic->send(resp);
                                     _GDH_state = GDH_WAITING_POP;
                                 } break;
 
@@ -835,39 +820,52 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
                     case GDH_BROADCAST: {
                     //can be received from two nodes. Last and gateway
                         GDH_Broadcast* message = buf->frame()->data<GDH_Broadcast>();
-                        _tstp->trace() << "TSTP::GDH_Security::update(): GDH BROADCAST message received" << endl;
-                        if(!_tstp->sink) {
+                        _tstp->trace() << "TSTP::GDH_Security::update(): GDH_BROADCAST message received" << endl;
+                        if(!_tstp->_sink) {
                             if(_GDH_state == GDH_WAITING_POP) {
                                 Round_Key round_key = message->round_key();
                                 round_key = _gdh.remove_key(round_key);
                                 Buffer* resp = _tstp->alloc(sizeof(GDH_Response));
-                                Peer p(_id, Region(_tstp->sink(), 0, 0, -1), _tstp);
-                                new (resp->frame()) GDH_Response(Region::Space(p.valid().center, p.valid().radius), round_key);
+                                new (resp->frame()) GDH_Response(Region::Space(_tstp->sink(), 0), round_key);
                                 _tstp->marshal(resp);
-                                _tstp->trace() << "Sending GDH Response with round key(" << round_key << ") to " << TSTP::sink() << endl;
+                                _tstp->trace() << "Sending GDH_Response with round key(" << round_key << ") to " << _tstp->sink() << endl;
                                 _tstp->_nic->send(resp);
                                 _GDH_state = GDH_WAITING_FINAL;
                             } else if(_GDH_state == GDH_WAITING_FINAL) {
                                 Round_Key round_key = message->round_key();
                                 round_key = _gdh.insert_key(round_key);
                                 _tstp->trace() << "We calculated the final key! key = " << round_key << endl;
-                                for(Peers::Element * el = _trusted_peers.head(); el; el = el->next()) {
-                                    el->object()->master_secret(round_key.numerize());
+                                for(unsigned int i = 0; i < _tstp->_units; i++){
+                                    if(i != _tstp->_unit){
+                                        Peer * p = new Peer(_id, Region(_tstp->_instances[i]->here(), 0, 0, -1), _tstp);
+                                        p->master_secret(round_key.numerize());
+                                        _trusted_peers.insert(p->link());
+                                    }
                                 }
                             }
                         } else { /*gateway*/
-                            Round_Key key = _gdh.insert_key(message->round_key());
-                            _tstp->trace() << "Gateway calculated his final key! Key = " << key << endl;
+                            Round_Key round_key = message->round_key();
+                            GDH_Broadcast* message = buf->frame()->data<GDH_Broadcast>();
+                            Region::Space origin = buf->frame()->data<Header>()->origin(); //source of the message. Address
+                            Buffer* resp = _tstp->alloc(sizeof(GDH_Broadcast));
+                            new (resp->frame()) GDH_Broadcast(origin, round_key);
+                            _tstp->marshal(resp);
+                            _tstp->_nic->send(resp);
+                            round_key = _gdh.insert_key(round_key);
+                            _tstp->trace() << "Gateway calculated his final key! Key = " << round_key << endl;
                             //for each peer establish master secret
-                            for(Peers::Element * el = _trusted_peers.head(); el; el = el->next()) {
-                                el->object()->master_secret(key.numerize());
+                            for(unsigned int i = 0; i < _tstp->_units; i++){
+                                if(i != _tstp->_unit){
+                                    Peer * p = new Peer(_id, Region(_tstp->_instances[i]->here(), 0, 0, -1), _tstp);
+                                    p->master_secret(round_key.numerize());
+                                    _trusted_peers.insert(p->link());
+                                }
                             }
                         }
                     } break;
                     case GDH_RESPONSE: {
-                        if(_tstp->sink) {
+                        if(_tstp->_sink) {
                             _tstp->trace() << "TSTP::GDH_Security::update(): GDH RESPONSE message received" << endl;
-                            GDH_Response* message = buf->frame()->data<GDH_Response>();
                             Region::Space origin = buf->frame()->data<Header>()->origin(); //source of the message. Address
                             Round_Key round_key = message->round_key();
                             round_key = _gdh.insert_key(round_key);
@@ -950,67 +948,18 @@ void TSTP::Security::begin_group_diffie_hellman()
 
     _gdh = Group_Diffie_Hellman();
 
-    for(unsigned int i = 0; i < _tstp->_units; i++) {
-        for(unsigned int j = i; j < _tstp->_units; j++) {
-            if (i != j){
-                TSTP * t = _tstp->_instances[i];
-                VirtualMobilityManager *nodeMobilityModule = check_and_cast<VirtualMobilityManager*>(t->getParentModule()->getParentModule()->getParentModule()->getSubmodule("node", t->self)->getSubmodule("MobilityManager"));
-                Coordinates::Number x = nodeMobilityModule->getLocation().x * 100.0;
-                Coordinates::Number y = nodeMobilityModule->getLocation().y * 100.0;
-                Coordinates::Number z = nodeMobilityModule->getLocation().z * 100.0;
-                Coordinates here = Coordinates(x, y, z);
-                Peer * p = new Peer(_id, Region(here, 0, 0, -1), t);
-                
-                TSTP * t2 = _tstp->_instances[j];
-                nodeMobilityModule = check_and_cast<VirtualMobilityManager*>(t2->getParentModule()->getParentModule()->getParentModule()->getSubmodule("node", t2->self)->getSubmodule("MobilityManager"));
-                x = nodeMobilityModule->getLocation().x * 100.0;
-                y = nodeMobilityModule->getLocation().y * 100.0;
-                z = nodeMobilityModule->getLocation().z * 100.0;
-                here = Coordinates(x, y, z);
-                Peer * p2 = new Peer(_id, Region(here, 0, 0, -1), t2);
-                
-                t->_security->_trusted_peers.insert(p2->link());
-                t2->_security->_trusted_peers.insert(p->link());
-            }
-        }
-    }
-    
-    Peers nodes;
-    Peers::Element * nextNode;
-    for(Peers::Element * el = _trusted_peers.head(); el; el = nextNode) {
-        nextNode = el->next();
-        nodes.insert(el);
-    }
+    TSTP * t = (_tstp->_instances[0]->_sink ? _tstp->_instances[1] : _tstp->_instances[0]);
 
-    Peer * last = nodes.remove_tail()->object();
+    VirtualMobilityManager *nodeMobilityModule = check_and_cast<VirtualMobilityManager*>(t->getParentModule()->getParentModule()->getParentModule()->getSubmodule("node", t->self)->getSubmodule("MobilityManager"));
+    Coordinates::Number x = nodeMobilityModule->getLocation().x * 100.0;
+    Coordinates::Number y = nodeMobilityModule->getLocation().y * 100.0;
+    Coordinates::Number z = nodeMobilityModule->getLocation().z * 100.0;
+    Coordinates first = Coordinates(x, y, z);
 
-    Buffer* resp = _tstp->alloc(sizeof(GDH_Setup_Last));
-    new (resp->frame()) GDH_Setup_Last(Region::Space(last->valid().center, last->valid().radius));
+    Buffer * resp = _tstp->alloc(sizeof(GDH_Startup));
+    new (resp->frame()) GDH_Startup(Region::Space(first, 0));
     _tstp->marshal(resp);
-    _tstp->trace() << "Sending Setup Last to " << Region::Space(last->valid().center, last->valid().radius) << endl;
-    _tstp->_nic->send(resp);
-
-    Peer * first = nodes.remove_head()->object();
-
-    Peer * next = last;
-    if(nodes.size() > 0) {
-        for(auto it = nodes.begin(); it; it++) {
-            resp = _tstp->alloc(sizeof(GDH_Setup_Intermediate));
-            Peer * current = it->object();
-            new (resp->frame()) GDH_Setup_Intermediate(Region::Space(current->valid().center, current->valid().radius), Region::Space(next->valid().center, next->valid().radius));
-            _tstp->marshal(resp);
-            _tstp->trace() << "Sending Setup Intermediate to " << Region::Space(current->valid().center, current->valid().radius) << endl;
-            _tstp->_nic->send(resp);
-            next = current;
-        }
-    }
-
-    Peer * firsts_next = (_tstp->_units > 3 ? nodes.tail()->object() : last);
-
-    resp = _tstp->alloc(sizeof(GDH_Setup_First));
-    new (resp->frame()) GDH_Setup_First(Region::Space(first->valid().center, first->valid().radius), Region::Space(firsts_next->valid().center, firsts_next->valid().radius));
-    _tstp->marshal(resp);
-    _tstp->trace() << "Sending Setup First to " << Region::Space(first->valid().center, first->valid().radius) << endl;
+    _tstp->trace() << "TSTP::Security::Sending Startup to " << first << endl;
     _tstp->_nic->send(resp);
 
     _GDH_state = GDH_WAITING_GW;
@@ -1149,14 +1098,8 @@ void TSTP::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * buf)
                     trace() << "TSTP::update: Epoch: adjusted epoch Space-Time to: " << _global_coordinates << ", " << _epoch << endl;
                 }
             } break;
-            case GDH_SETUP_FIRST:
-                db<TSTP>(INF) << "TSTP::update: GDH_Setup_First: " << *buf->frame()->data<GDH_Setup_First>() << endl;
-                break;
-            case GDH_SETUP_INTERMEDIATE:
-                db<TSTP>(INF) << "TSTP::update: GDH_Setup_Intermediate: " << *buf->frame()->data<GDH_Setup_Intermediate>() << endl;
-                break;
-            case GDH_SETUP_LAST:
-                db<TSTP>(INF) << "TSTP::update: GDH_Setup_Last: " << *buf->frame()->data<GDH_Setup_Last>() << endl;
+            case GDH_STARTUP:
+                db<TSTP>(INF) << "TSTP::update: GDH_Startup: " << *buf->frame()->data<GDH_Startup>() << endl;
                 break;
             case GDH_ROUND:
                 db<TSTP>(INF) << "TSTP::update: GDH_Round: " << *buf->frame()->data<GDH_Round>() << endl;

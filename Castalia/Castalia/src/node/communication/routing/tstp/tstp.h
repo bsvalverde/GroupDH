@@ -105,14 +105,8 @@ public:
                         case EPOCH:
                             db << reinterpret_cast<const Epoch &>(p);
                             break;
-                        case GDH_SETUP_FIRST:
-                            db << reinterpret_cast<const GDH_Setup_First &>(p);
-                            break;
-                        case GDH_SETUP_INTERMEDIATE:
-                            db << reinterpret_cast<const GDH_Setup_Intermediate &>(p);
-                            break;
-                        case GDH_SETUP_LAST:
-                            db << reinterpret_cast<const GDH_Setup_Last &>(p);
+                        case GDH_STARTUP:
+                            db << reinterpret_cast<const GDH_Startup &>(p);
                             break;
                         case GDH_ROUND:
                             db << reinterpret_cast<const GDH_Round &>(p);
@@ -377,73 +371,25 @@ public:
     } __attribute__((packed));
 
         // Group Diffie-Hellman setup first node Security Bootstrap Control Message
-    class GDH_Setup_First: public Control
+    class GDH_Startup: public Control
     {
     public:
-        GDH_Setup_First(const Region::Space & destination, const Region::Space & next)
+        GDH_Startup(const Region::Space & destination)
         //: Control(GDH_SETUP_FIRST, 0, 0, now(), here(), here()), _destination(destination), _next(next), _group_id(group_id){ }
-        : Control(GDH_SETUP_FIRST, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination), _next(next){ }
-
-        const Region::Space & next() { return _next; }
+        : Control(GDH_STARTUP, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination){ }
 
         const Region::Space & destination() { return _destination; }
 
-        friend OStream & operator<<(OStream & db, const GDH_Setup_First & m) {
-            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next;
+        friend OStream & operator<<(OStream & db, const GDH_Startup & m) {
+            db << reinterpret_cast<const Control &>(m) << "d=" << m._destination;
             return db;
         }
 
     private:
         Region::Space _destination; //destination of this message
-        Region::Space _next;
         CRC _crc; //What is CRC? Do we need this here?
     //} __attribute__((packed)); // TODO
     };
-
-    // Group Diffie-Hellman setup intermediate node Security Bootstrap Control Message
-    class GDH_Setup_Intermediate: public Control
-    {
-    public:
-        GDH_Setup_Intermediate(const Region::Space & destination, const Region::Space & next)
-        //: Control(GDH_SETUP_INTERMEDIATE, 0, 0, now(), here(), here()), _destination(destination), _next(next), _group_id(group_id){ }
-        : Control(GDH_SETUP_INTERMEDIATE, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination), _next(next){ }
-
-        const Region::Space & next() { return _next; }
-
-        const Region::Space & destination() { return _destination; }
-
-        friend OStream & operator<<(OStream & db, const GDH_Setup_Intermediate & m) {
-            db << reinterpret_cast<const Control &>(m) << ",n=" << m._next;
-            return db;
-        }
-
-    private:
-        Region::Space _destination;
-        Region::Space _next;
-        CRC _crc; //What is CRC? Do we need this here?
-    //} __attribute__((packed)); // TODO
-    };
-
-    // Group Diffie-Hellman setup last node Security Bootstrap Control Message
-    class GDH_Setup_Last: public Control
-    {
-    public:
-        GDH_Setup_Last(const Region::Space & destination)
-        //: Control(GDH_SETUP_LAST, 0, 0, now(), here(), here()), _destination(destination), _next(next), _group_id(group_id){ }
-        : Control(GDH_SETUP_LAST, 0, 0, 0, Coordinates(0,0,0), Coordinates(0,0,0)), _destination(destination) { }
-
-        const Region::Space & destination() { return _destination; }
-
-        friend OStream & operator<<(OStream & db, const GDH_Setup_Last & m) {
-            db << reinterpret_cast<const Control &>(m);
-            return db;
-        }
-
-    private:
-        Region::Space _destination;
-        CRC _crc; //What is CRC? Do we need this here?
-    //} __attribute__((packed)); // TODO
-    } ;
 
     // Group Diffie-Hellman round Security Bootstrap Control Message
     class GDH_Round: public Control
@@ -1280,7 +1226,6 @@ public:
         Group_Diffie_Hellman _gdh;
         GDH_State _GDH_state;
         GDH_Node_Type _GDH_node_type;
-        Region::Space _GDH_next;
     };
 
     // TSTP Life Keeper explicitly asks for Metadata whenever it's needed
@@ -1387,35 +1332,25 @@ private:
                     case EPOCH: {
                         return buf->frame()->data<Epoch>()->destination();
                     }
-                    case GDH_SETUP_FIRST: {
+                    case GDH_STARTUP: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
-                    }
-                    case GDH_SETUP_INTERMEDIATE: {
-                        Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
-                    }
-                    case GDH_SETUP_LAST: {
-                        Time origin = buf->frame()->data<Header>()->time();
-                        Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(buf->frame()->data<GDH_Startup>()->destination().center, buf->frame()->data<GDH_Startup>()->destination().radius, origin, deadline);
                     }
                     case GDH_ROUND: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(buf->frame()->data<GDH_Round>()->destination().center, buf->frame()->data<GDH_Round>()->destination().radius, origin, deadline);
                     }
                     case GDH_BROADCAST: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(buf->frame()->data<GDH_Broadcast>()->destination().center, buf->frame()->data<GDH_Broadcast>()->destination().radius, origin, deadline);
                     }
                     case GDH_RESPONSE: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
+                        return Region(buf->frame()->data<GDH_Response>()->destination().center, buf->frame()->data<GDH_Response>()->destination().radius, origin, deadline);
                     }
                 }
             default:
