@@ -845,7 +845,6 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
                             }
                         } else { /*gateway*/
                             Round_Key round_key = message->round_key();
-                            GDH_Broadcast* message = buf->frame()->data<GDH_Broadcast>();
                             Region::Space origin = buf->frame()->data<Header>()->origin(); //source of the message. Address
                             Buffer* resp = _tstp->alloc(sizeof(GDH_Broadcast));
                             new (resp->frame()) GDH_Broadcast(origin, round_key);
