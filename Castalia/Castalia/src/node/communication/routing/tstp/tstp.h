@@ -1390,32 +1390,32 @@ private:
                     case GDH_SETUP_FIRST: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(sink(), 0, origin, deadline);
+                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
                     }
                     case GDH_SETUP_INTERMEDIATE: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(sink(), 0, origin, deadline);
+                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
                     }
                     case GDH_SETUP_LAST: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(sink(), 0, origin, deadline);
+                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
                     }
                     case GDH_ROUND: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(sink(), 0, origin, deadline);
+                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
                     }
                     case GDH_BROADCAST: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(sink(), 0, origin, deadline);
+                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
                     }
                     case GDH_RESPONSE: {
                         Time origin = buf->frame()->data<Header>()->time();
                         Time deadline = origin + min(static_cast<unsigned long long>(_security->KEY_MANAGER_PERIOD), _security->KEY_EXPIRY) / 2;
-                        return Region(sink(), 0, origin, deadline);
+                        return Region(buf->frame()->data<DH_Request>()->destination().center, buf->frame()->data<DH_Request>()->destination().radius, origin, deadline);
                     }
                 }
             default:
