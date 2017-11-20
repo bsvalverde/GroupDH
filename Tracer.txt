@@ -1,0 +1,2048 @@
+
+0                 SN.node[0].Communication.Routing         TSTP::startup()
+0                 SN.node[0].Communication.Routing         I am a sink
+0                 SN.node[0].Communication.Routing         Received [TSTP pointer setup] from MAC layer. src = 0
+0                 SN.node[0].Communication.Routing         Locator::bootstrap()
+0                 SN.node[0].Communication.Routing         _here = (0,0,0)
+0                 SN.node[0].Communication.Routing         Timekeeper::bootstrap()
+0                 SN.node[0].Communication.Routing         Router::bootstrap()
+0                 SN.node[0].Communication.Routing         Security::bootstrap()
+0                 SN.node[0].Communication.Routing         TSTP::Security::begin_group_diffie_hellman()
+
+0                 SN.node[0].Communication.Routing         TSTP::Locator::marshal(buf=0xaac890)
+
+0                 SN.node[0].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xaac890)
+
+0                 SN.node[0].Communication.Routing         TSTP::Router::marshal(buf=0xaac890)
+
+0                 SN.node[0].Communication.Routing         TSTP::Security::marshal(buf=0xaac890)
+
+0                 SN.node[0].Communication.Routing         TSTP::Security::Sending Startup to (100,0,0)
+
+0                 SN.node[0].Communication.Routing         TSTP::bootstrap()
+0                 SN.node[0].Communication.Routing         TSTP = (TSTP)Routing, NIC = 11062864
+0.001             SN.node[1].Communication.Routing         TSTP::startup()
+0.001             SN.node[1].Communication.Routing         I am a sensor
+0.001             SN.node[2].Communication.Routing         TSTP::startup()
+0.001             SN.node[2].Communication.Routing         I am a sensor
+0.001             SN.node[3].Communication.Routing         TSTP::startup()
+0.001             SN.node[3].Communication.Routing         I am a sensor
+0.001             SN.node[1].Communication.Routing         Received [TSTP pointer setup] from MAC layer. src = 0
+0.001             SN.node[1].Communication.Routing         Locator::bootstrap()
+0.001             SN.node[1].Communication.Routing         _here = (100,0,0)
+0.001             SN.node[1].Communication.Routing         Timekeeper::bootstrap()
+0.001             SN.node[1].Communication.Routing         Router::bootstrap()
+0.001             SN.node[1].Communication.Routing         Security::bootstrap()
+0.001             SN.node[1].Communication.Routing         TSTP = (TSTP)Routing, NIC = 11111120
+0.001             SN.node[2].Communication.Routing         Received [TSTP pointer setup] from MAC layer. src = 0
+0.001             SN.node[2].Communication.Routing         Locator::bootstrap()
+0.001             SN.node[2].Communication.Routing         _here = (0,100,0)
+0.001             SN.node[2].Communication.Routing         Timekeeper::bootstrap()
+0.001             SN.node[2].Communication.Routing         Router::bootstrap()
+0.001             SN.node[2].Communication.Routing         Security::bootstrap()
+0.001             SN.node[2].Communication.Routing         TSTP = (TSTP)Routing, NIC = 11132288
+0.001             SN.node[3].Communication.Routing         Received [TSTP pointer setup] from MAC layer. src = 0
+0.001             SN.node[3].Communication.Routing         Locator::bootstrap()
+0.001             SN.node[3].Communication.Routing         _here = (100,100,0)
+0.001             SN.node[3].Communication.Routing         Timekeeper::bootstrap()
+0.001             SN.node[3].Communication.Routing         Router::bootstrap()
+0.001             SN.node[3].Communication.Routing         Security::bootstrap()
+0.001             SN.node[3].Communication.Routing         TSTP = (TSTP)Routing, NIC = 11153024
+0.284498795401    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1230)
+
+0.284498795401    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1230)
+
+0.284498795401    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1230)
+
+0.284498795401    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1230)
+
+0.284498795401    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab0cc0)
+
+0.284498795401    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab0cc0)
+
+0.284498795401    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab0cc0)
+
+0.284498795401    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab0cc0)
+
+0.284498795401    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab0cc0)
+
+0.284498795401    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab0cc0)
+
+0.284498795401    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab0cc0)
+
+0.284498795401    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab0cc0)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1270)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1270)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Timekeeper::update: synchronizing with (0,0,0)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1270)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1270)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Security::update(): Control message received
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Security::update(): GDH_STARTUP message received
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Locator::marshal(buf=0xab18e0)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab18e0)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Router::marshal(buf=0xab18e0)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Security::marshal(buf=0xab18e0)
+
+0.288497766019    SN.node[1].Communication.Routing         TSTP::Security::update(): Sending GDH_Round to (0,100,0)
+
+0.288497766019    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab0cc0)
+
+0.288497766019    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab0cc0)
+
+0.288497766019    SN.node[2].Communication.Routing         TSTP::Timekeeper::update: synchronizing with (0,0,0)
+
+0.288497766019    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab0cc0)
+
+0.288497766019    SN.node[2].Communication.Routing         not forwarding message from node closer to destination
+0.288497766019    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab0cc0)
+
+0.288497766019    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab0cc0)
+
+0.288497766019    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab0cc0)
+
+0.288497766019    SN.node[3].Communication.Routing         TSTP::Timekeeper::update: synchronizing with (0,0,0)
+
+0.288497766019    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab0cc0)
+
+0.288497766019    SN.node[3].Communication.Routing         not forwarding message from node closer to destination
+0.288497766019    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab0cc0)
+
+0.427547041506    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1650)
+
+0.427547041506    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1650)
+
+0.427547041506    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1650)
+
+0.427547041506    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1650)
+
+0.427547041506    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1650)
+
+0.43407189799     SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xaac7e0)
+
+0.43407189799     SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xaac7e0)
+
+0.43407189799     SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xaac7e0)
+
+0.43407189799     SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xaac7e0)
+
+0.43407189799     SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xaac7e0)
+
+0.43407189799     SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xaac7e0)
+
+0.43407189799     SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xaac7e0)
+
+0.43407189799     SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xaac7e0)
+
+0.581748643397    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.581748643397    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.581748643397    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.581748643397    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.581748643397    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.581748643397    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab17c0)
+
+0.581748643397    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab17c0)
+
+0.581748643397    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab17c0)
+
+0.581748643397    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab17c0)
+
+0.581748643397    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1230)
+
+0.581748643397    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1230)
+
+0.581748643397    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1230)
+
+0.581748643397    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1230)
+
+0.726544477217    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.726544477217    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.726544477217    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.726544477217    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.726544477217    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab17c0)
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab17c0)
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab17c0)
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab17c0)
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Security::update(): Control message received
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::GDH_Security::update(): GDH_ROUND message received
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Locator::marshal(buf=0xab1a00)
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab1a00)
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Router::marshal(buf=0xab1a00)
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Security::marshal(buf=0xab1a00)
+
+0.726544477217    SN.node[2].Communication.Routing         TSTP::Security::update(): Sending GDH_Round to (100,100,0)
+
+0.726544477217    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1650)
+
+0.726544477217    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1650)
+
+0.726544477217    SN.node[3].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+0.726544477217    SN.node[3].Communication.Routing         now() = 726554
+
+0.726544477217    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1650)
+
+0.726544477217    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1650)
+
+0.861834474735    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1760)
+
+0.861834474735    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1760)
+
+0.861834474735    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1760)
+
+0.861834474735    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1760)
+
+0.862559486175    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.862559486175    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.862559486175    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.862559486175    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.862559486175    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab17c0)
+
+0.864009499055    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1230)
+
+0.864009499055    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1230)
+
+0.864009499055    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1230)
+
+0.864009499055    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1230)
+
+1.015692748329    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1230)
+
+1.015692748329    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1230)
+
+1.015692748329    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1230)
+
+1.015692748329    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1230)
+
+1.015692748329    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1230)
+
+1.015692748329    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1230)
+
+1.015692748329    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1230)
+
+1.015692748329    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1230)
+
+1.015692748329    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1230)
+
+1.015692748329    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xa97b80)
+
+1.015692748329    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xa97b80)
+
+1.015692748329    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xa97b80)
+
+1.015692748329    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xa97b80)
+
+1.159043406249    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xaac7e0)
+
+1.159043406249    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xaac7e0)
+
+1.159043406249    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xaac7e0)
+
+1.159043406249    SN.node[0].Communication.Routing         not forwarding message from node closer to destination
+1.159043406249    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xaac7e0)
+
+1.159043406249    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xaac7e0)
+
+1.159043406249    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xaac7e0)
+
+1.159043406249    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xaac7e0)
+
+1.159043406249    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xaac7e0)
+
+1.159043406249    SN.node[1].Communication.Routing         not forwarding message from node closer to destination
+1.159043406249    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xaac7e0)
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xaac7e0)
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xaac7e0)
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+1.159043406249    SN.node[3].Communication.Routing         now() = 1159069
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xaac7e0)
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xaac7e0)
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Security::update(): Control message received
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::GDH_Security::update(): GDH_ROUND message received
+
+1.159043406249    SN.node[3].Communication.Routing         Last node received GDH_ROUND
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Security::update(): Broadcasting round key
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Locator::marshal(buf=0xab1770)
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab1770)
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Router::marshal(buf=0xab1770)
+
+1.159043406249    SN.node[3].Communication.Routing         TSTP::Security::marshal(buf=0xab1770)
+
+1.296498128595    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xa8a340)
+
+1.296498128595    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xa8a340)
+
+1.296498128595    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xa8a340)
+
+1.296498128595    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xa8a340)
+
+1.300848020955    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.300848020955    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.300848020955    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.300848020955    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.300848020955    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.300848020955    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xa8a340)
+
+1.300848020955    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xa8a340)
+
+1.300848020955    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xa8a340)
+
+1.300848020955    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xa8a340)
+
+1.448530615073    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.448530615073    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.448530615073    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.448530615073    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.448530615073    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xa8a340)
+
+1.448530615073    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1650)
+
+1.448530615073    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1650)
+
+1.448530615073    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1650)
+
+1.448530615073    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1650)
+
+1.448530615073    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xa8a340)
+
+1.448530615073    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xa8a340)
+
+1.448530615073    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xa8a340)
+
+1.448530615073    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xa8a340)
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1a00)
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1a00)
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1a00)
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1a00)
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::Security::update(): Control message received
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::GDH_Security::update(): GDH_BROADCAST message received
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::Locator::marshal(buf=0xab1c40)
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab1c40)
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::Router::marshal(buf=0xab1c40)
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::Security::marshal(buf=0xab1c40)
+
+1.591876457653    SN.node[0].Communication.Routing         Gateway calculated his final key! Key = {x=[3854446631, 3639190190, 868639146, 2893796681],y=[1983098196, 2735508401, 840280741, 3659014240],z=[1, 0, 0, 0]}
+
+1.591876457653    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1a00)
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1a00)
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1a00)
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1a00)
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1a00)
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::Security::update(): Control message received
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::GDH_Security::update(): GDH_BROADCAST message received
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::Locator::marshal(buf=0xab1d60)
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab1d60)
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::Router::marshal(buf=0xab1d60)
+
+1.591876457653    SN.node[1].Communication.Routing         TSTP::Security::marshal(buf=0xab1d60)
+
+1.591876457653    SN.node[1].Communication.Routing         Sending GDH_Response with round key({x=[381469398, 2795486511, 3312049724, 2373055025],y=[1184814490, 1511037194, 1632681153, 4130916850],z=[1, 0, 0, 0]}) to (0,0,0)
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1a00)
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1a00)
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1a00)
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1a00)
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::Security::update(): Control message received
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::GDH_Security::update(): GDH_BROADCAST message received
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::Locator::marshal(buf=0xab1fa0)
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab1fa0)
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::Router::marshal(buf=0xab1fa0)
+
+1.591876457653    SN.node[2].Communication.Routing         TSTP::Security::marshal(buf=0xab1fa0)
+
+1.591876457653    SN.node[2].Communication.Routing         Sending GDH_Response with round key({x=[2350014831, 2092451797, 1570626178, 2789185262],y=[237593379, 1519087409, 255049460, 2795123763],z=[1, 0, 0, 0]}) to (0,0,0)
+
+1.729341487849    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1090)
+
+1.729341487849    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1090)
+
+1.729341487849    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1090)
+
+1.729341487849    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1090)
+
+1.879092250105    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1b20)
+
+1.879092250105    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1b20)
+
+1.879092250105    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1b20)
+
+1.879092250105    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1b20)
+
+1.879092250105    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1b20)
+
+1.879817262256    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1b20)
+
+1.879817262256    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1b20)
+
+1.879817262256    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1b20)
+
+1.879817262256    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1b20)
+
+1.881267234808    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1b20)
+
+1.881267234808    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1b20)
+
+1.881267234808    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1b20)
+
+1.881267234808    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1b20)
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xa97b80)
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xa97b80)
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xa97b80)
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xa97b80)
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::Security::update(): Control message received
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::GDH_Security::update(): GDH RESPONSE message received
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::Locator::marshal(buf=0xaacb40)
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xaacb40)
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::Router::marshal(buf=0xaacb40)
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::Security::marshal(buf=0xaacb40)
+
+2.024613096076    SN.node[0].Communication.Routing         Sending GDH Broadcast with round key({x=[1420641340, 1820945283, 2191442103, 2496574529],y=[2159898358, 1410622557, 2668019661, 3360013324],z=[1, 0, 0, 0]}) to {c=(100,0,0),r=0}
+
+2.024613096076    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xa97b80)
+
+2.027955316111    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xa97b80)
+
+2.027955316111    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xa97b80)
+
+2.027955316111    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xa97b80)
+
+2.027955316111    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xa97b80)
+
+2.162078424213    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1a00)
+
+2.162078424213    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1a00)
+
+2.162078424213    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1a00)
+
+2.162078424213    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1a00)
+
+2.166428365449    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2730)
+
+2.166428365449    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2730)
+
+2.166428365449    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2730)
+
+2.166428365449    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2730)
+
+2.309650898446    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2730)
+
+2.309650898446    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2730)
+
+2.309650898446    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2730)
+
+2.309650898446    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2730)
+
+2.309650898446    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2730)
+
+2.314000947086    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2730)
+
+2.314000947086    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2730)
+
+2.314000947086    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2730)
+
+2.314000947086    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2730)
+
+2.314000947086    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2730)
+
+2.314000947086    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2730)
+
+2.314000947086    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2730)
+
+2.314000947086    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2730)
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2730)
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2730)
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2730)
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2730)
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::Security::update(): Control message received
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::GDH_Security::update(): GDH RESPONSE message received
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::Locator::marshal(buf=0xab1840)
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab1840)
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::Router::marshal(buf=0xab1840)
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::Security::marshal(buf=0xab1840)
+
+2.321049994286    SN.node[0].Communication.Routing         Sending GDH Broadcast with round key({x=[1473924964, 690518425, 1936110392, 3229086421],y=[3943508428, 1120501444, 4105161853, 2965802176],z=[1, 0, 0, 0]}) to {c=(0,100,0),r=0}
+
+2.321049994286    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2730)
+
+2.458510194372    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab16d0)
+
+2.458510194372    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab16d0)
+
+2.458510194372    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab16d0)
+
+2.458510194372    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab16d0)
+
+2.462860135608    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.462860135608    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.462860135608    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.462860135608    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.462860135608    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.462860135608    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.462860135608    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.462860135608    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.61052292434     SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.61052292434     SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.61052292434     SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.61052292434     SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.61052292434     SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1fa0)
+
+2.61052292434     SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1fa0)
+
+2.61052292434     SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1fa0)
+
+2.61052292434     SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1fa0)
+
+2.61052292434     SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.61052292434     SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.61052292434     SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.61052292434     SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.754594944296    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.754594944296    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.754594944296    SN.node[1].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+2.754594944296    SN.node[1].Communication.Routing         now() = 2754633
+
+2.754594944296    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.754594944296    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1fa0)
+
+2.754594944296    SN.node[1].Communication.Routing         TSTP::Security::update(): Control message received
+
+2.754594944296    SN.node[1].Communication.Routing         TSTP::GDH_Security::update(): GDH_BROADCAST message received
+
+2.754594944296    SN.node[1].Communication.Routing         We calculated the final key! key = {x=[3854446631, 3639190190, 868639146, 2893796681],y=[1983098196, 2735508401, 840280741, 3659014240],z=[1, 0, 0, 0]}
+
+2.754594944296    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1fa0)
+
+2.754594944296    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1fa0)
+
+2.754594944296    SN.node[2].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+2.754594944296    SN.node[2].Communication.Routing         now() = 2754633
+
+2.754594944296    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1fa0)
+
+2.754594944296    SN.node[2].Communication.Routing         not forwarding message from node closer to destination
+2.754594944296    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1fa0)
+
+2.754594944296    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.754594944296    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.754594944296    SN.node[3].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+2.754594944296    SN.node[3].Communication.Routing         now() = 2754562
+
+2.754594944296    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.754594944296    SN.node[3].Communication.Routing         not forwarding message from node closer to destination
+2.754594944296    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1fa0)
+
+2.892060339563    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xa8a340)
+
+2.892060339563    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xa8a340)
+
+2.892060339563    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xa8a340)
+
+2.892060339563    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xa8a340)
+
+2.892060339563    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xa8a340)
+
+2.896410277219    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xa8a340)
+
+2.896410277219    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xa8a340)
+
+2.896410277219    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xa8a340)
+
+2.896410277219    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xa8a340)
+
+2.896410277219    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xa8a340)
+
+2.896410277219    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xa8a340)
+
+2.896410277219    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xa8a340)
+
+2.896410277219    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.181477554204    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xa8a340)
+
+3.181477554204    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xa8a340)
+
+3.181477554204    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xa8a340)
+
+3.181477554204    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xa8a340)
+
+3.18582749544     SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.18582749544     SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.18582749544     SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.18582749544     SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.18582749544     SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.18582749544     SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.18582749544     SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.18582749544     SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.19287644647     SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xa8a340)
+
+3.19287644647     SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xa8a340)
+
+3.19287644647     SN.node[1].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+3.19287644647     SN.node[1].Communication.Routing         now() = 3192921
+
+3.19287644647     SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xa8a340)
+
+3.19287644647     SN.node[1].Communication.Routing         not forwarding message from node closer to destination
+3.19287644647     SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xa8a340)
+
+3.19287644647     SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.19287644647     SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.19287644647     SN.node[2].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+3.19287644647     SN.node[2].Communication.Routing         now() = 3192921
+
+3.19287644647     SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.19287644647     SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.19287644647     SN.node[2].Communication.Routing         TSTP::Security::update(): Control message received
+
+3.19287644647     SN.node[2].Communication.Routing         TSTP::GDH_Security::update(): GDH_BROADCAST message received
+
+3.19287644647     SN.node[2].Communication.Routing         We calculated the final key! key = {x=[3854446631, 3639190190, 868639146, 2893796681],y=[1983098196, 2735508401, 840280741, 3659014240],z=[1, 0, 0, 0]}
+
+3.19287644647     SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.19287644647     SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.19287644647     SN.node[3].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+3.19287644647     SN.node[3].Communication.Routing         now() = 3192921
+
+3.19287644647     SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.19287644647     SN.node[3].Communication.Routing         not forwarding message from node closer to destination
+3.19287644647     SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.330326497593    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2730)
+
+3.330326497593    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2730)
+
+3.330326497593    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2730)
+
+3.330326497593    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2730)
+
+3.330326497593    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2730)
+
+3.334676436239    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2730)
+
+3.334676436239    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2730)
+
+3.334676436239    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2730)
+
+3.334676436239    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2730)
+
+3.336851400562    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.336851400562    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.336851400562    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.336851400562    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.621344814773    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab2730)
+
+3.621344814773    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab2730)
+
+3.621344814773    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab2730)
+
+3.621344814773    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab2730)
+
+3.626419746215    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.626419746215    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.626419746215    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.626419746215    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.626419746215    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2730)
+
+3.626419746215    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2730)
+
+3.626419746215    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2730)
+
+3.626419746215    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2730)
+
+3.632743707039    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.632743707039    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.632743707039    SN.node[1].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+3.632743707039    SN.node[1].Communication.Routing         now() = 3632794
+
+3.632743707039    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.632743707039    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.632743707039    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.632743707039    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.632743707039    SN.node[2].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+3.632743707039    SN.node[2].Communication.Routing         now() = 3632794
+
+3.632743707039    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.632743707039    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xa8a340)
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+3.632743707039    SN.node[3].Communication.Routing         now() = 3632794
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xa8a340)
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Security::update(): Control message received
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::GDH_Security::update(): GDH_BROADCAST message received
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Locator::marshal(buf=0xa9d5a0)
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xa9d5a0)
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Router::marshal(buf=0xa9d5a0)
+
+3.632743707039    SN.node[3].Communication.Routing         TSTP::Security::marshal(buf=0xa9d5a0)
+
+3.632743707039    SN.node[3].Communication.Routing         Sending GDH_Response with round key({x=[649362053, 211368825, 438287279, 3666545811],y=[3839660794, 864041904, 466070144, 2844580124],z=[1, 0, 0, 0]}) to (0,0,0)
+
+3.754968894016    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xa8a2d0)
+
+3.754968894016    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xa8a2d0)
+
+3.754968894016    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xa8a2d0)
+
+3.754968894016    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xa8a2d0)
+
+3.757143875196    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.757143875196    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.757143875196    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.757143875196    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1f70)
+
+3.770193692276    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1a30)
+
+3.770193692276    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1a30)
+
+3.770193692276    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1a30)
+
+3.770193692276    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1a30)
+
+3.770193692276    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1a30)
+
+3.923900988863    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1820)
+
+3.923900988863    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1820)
+
+3.923900988863    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1820)
+
+3.923900988863    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1820)
+
+3.923900988863    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1820)
+
+3.923900988863    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1820)
+
+3.923900988863    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1820)
+
+3.923900988863    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1820)
+
+3.923900988863    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1820)
+
+3.923900988863    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1820)
+
+3.923900988863    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1820)
+
+3.923900988863    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1820)
+
+3.923900988863    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1820)
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1a30)
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1a30)
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1a30)
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1a30)
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::Security::update(): Control message received
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::GDH_Security::update(): GDH RESPONSE message received
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::Locator::marshal(buf=0xab29c0)
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab29c0)
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::Router::marshal(buf=0xab29c0)
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::Security::marshal(buf=0xab29c0)
+
+4.068698005563    SN.node[0].Communication.Routing         Sending GDH Broadcast with round key({x=[1262785376, 4114702193, 1071231012, 968382433],y=[2194340599, 2688527469, 4042632908, 3255111008],z=[1, 0, 0, 0]}) to {c=(100,100,0),r=0}
+
+4.068698005563    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1a30)
+
+4.068698005563    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.068698005563    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.068698005563    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.068698005563    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.068698005563    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1a30)
+
+4.068698005563    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1a30)
+
+4.068698005563    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1a30)
+
+4.068698005563    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1a30)
+
+4.204712182353    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.204712182353    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.204712182353    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.204712182353    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.204712182353    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1bd0)
+
+4.204712182353    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1bd0)
+
+4.204712182353    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1bd0)
+
+4.204712182353    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1bd0)
+
+4.206162162765    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2730)
+
+4.206162162765    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2730)
+
+4.206162162765    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2730)
+
+4.206162162765    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2730)
+
+4.357713886244    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab28a0)
+
+4.357713886244    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab28a0)
+
+4.357713886244    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab28a0)
+
+4.357713886244    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab28a0)
+
+4.357713886244    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab2730)
+
+4.357713886244    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab2730)
+
+4.357713886244    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab2730)
+
+4.357713886244    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab2730)
+
+4.357713886244    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab28a0)
+
+4.357713886244    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab28a0)
+
+4.357713886244    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab28a0)
+
+4.357713886244    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab28a0)
+
+4.5017859062      SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1820)
+
+4.5017859062      SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1820)
+
+4.5017859062      SN.node[1].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+4.5017859062      SN.node[1].Communication.Routing         now() = 4501849
+
+4.5017859062      SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1820)
+
+4.5017859062      SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1820)
+
+4.5017859062      SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1820)
+
+4.5017859062      SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1820)
+
+4.5017859062      SN.node[2].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+4.5017859062      SN.node[2].Communication.Routing         now() = 4501849
+
+4.5017859062      SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1820)
+
+4.5017859062      SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1820)
+
+4.5017859062      SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1820)
+
+4.5017859062      SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1820)
+
+4.5017859062      SN.node[3].Communication.Routing         TSTP::Timekeeper::update: timer offset corrected.
+
+4.5017859062      SN.node[3].Communication.Routing         now() = 4501849
+
+4.5017859062      SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1820)
+
+4.5017859062      SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1820)
+
+4.5017859062      SN.node[3].Communication.Routing         TSTP::Security::update(): Control message received
+
+4.5017859062      SN.node[3].Communication.Routing         TSTP::GDH_Security::update(): GDH_BROADCAST message received
+
+4.5017859062      SN.node[3].Communication.Routing         We calculated the final key! key = {x=[3854446631, 3639190190, 868639146, 2893796681],y=[1983098196, 2735508401, 840280741, 3659014240],z=[1, 0, 0, 0]}
+
+4.638520386511    SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.638520386511    SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.638520386511    SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.638520386511    SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1a30)
+
+4.638520386511    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1a30)
+
+4.638520386511    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1a30)
+
+4.638520386511    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1a30)
+
+4.638520386511    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1a30)
+
+4.639245373571    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2820)
+
+4.639245373571    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2820)
+
+4.639245373571    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2820)
+
+4.639245373571    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2820)
+
+4.639245373571    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2820)
+
+30.000464561489   SN.node[3].Application                   Sending packet with value 0
+30.000464561489   SN.node[3].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+30.000464561489   SN.node[3].Communication.Routing         Received [GeoSync Data packet] from application layer
+30.000464561489   SN.node[3].Communication.Routing         TSTP::Locator::marshal(buf=0xab29c0)
+
+30.000464561489   SN.node[3].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab29c0)
+
+30.000464561489   SN.node[3].Communication.Routing         TSTP::Router::marshal(buf=0xab29c0)
+
+30.000464561489   SN.node[3].Communication.Routing         TSTP::Security::marshal(buf=0xab29c0)
+
+30.000645835284   SN.node[2].Application                   Sending packet with value 1
+30.000645835284   SN.node[2].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+30.000645835284   SN.node[2].Communication.Routing         Received [GeoSync Data packet] from application layer
+30.000645835284   SN.node[2].Communication.Routing         TSTP::Locator::marshal(buf=0xab10c0)
+
+30.000645835284   SN.node[2].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab10c0)
+
+30.000645835284   SN.node[2].Communication.Routing         TSTP::Router::marshal(buf=0xab10c0)
+
+30.000645835284   SN.node[2].Communication.Routing         TSTP::Security::marshal(buf=0xab10c0)
+
+30.001673528716   SN.node[1].Application                   Sending packet with value 2
+30.001673528716   SN.node[1].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+30.001673528716   SN.node[1].Communication.Routing         Received [GeoSync Data packet] from application layer
+30.001673528716   SN.node[1].Communication.Routing         TSTP::Locator::marshal(buf=0xa8a2d0)
+
+30.001673528716   SN.node[1].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xa8a2d0)
+
+30.001673528716   SN.node[1].Communication.Routing         TSTP::Router::marshal(buf=0xa8a2d0)
+
+30.001673528716   SN.node[1].Communication.Routing         TSTP::Security::marshal(buf=0xa8a2d0)
+
+30.040791549762   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab2820)
+
+30.040791549762   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab2820)
+
+30.040791549762   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab2820)
+
+30.040791549762   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab2820)
+
+30.041516546822   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1a30)
+
+30.041516546822   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1a30)
+
+30.041516546822   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1a30)
+
+30.041516546822   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1a30)
+
+30.041516546822   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1a30)
+
+30.041516546822   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2320)
+
+30.041516546822   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2320)
+
+30.041516546822   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2320)
+
+30.041516546822   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2320)
+
+30.183871579402   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2320)
+
+30.183871579402   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2320)
+
+30.183871579402   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2320)
+
+30.183871579402   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2320)
+
+30.183871579402   SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+30.183871579402   SN.node[0].Communication.Routing         from (100,100,0)
+
+30.183871579402   SN.node[0].Communication.Routing         Found valid peer
+
+30.183871579402   SN.node[0].Communication.Routing         t = 0
+
+30.183871579402   SN.node[0].Communication.Routing         Upack done!
+
+30.183871579402   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2320)
+
+30.183871579402   SN.node[0].Communication.Routing         TSTP::update:response=0xab2320 => {v=0,t=R,co=d,tr=0,s=3,ot=30000886,o=(100,100,0),lt=3018137384,l=(100,100,0)},u={D:l=0},e=0,x=30000000,d=0
+
+30.183871579402   SN.node[0].Communication.Routing         response->time() = 30000886
+30.183871579402   SN.node[0].Communication.Routing         now() = 30184296
+30.183871579402   SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xab2320)
+30.183871579402   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2320)
+
+30.183871579402   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2320)
+
+30.183871579402   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2320)
+
+30.183871579402   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2320)
+
+30.183871579402   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1e60)
+
+30.183871579402   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1e60)
+
+30.183871579402   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1e60)
+
+30.183871579402   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1e60)
+
+30.183871579402   SN.node[0].Communication.Routing         Received [TSTP data hook] from MAC layer. src = 0
+30.183871579402   SN.node[0].Application                   (ApplicationPacket)TSTP data hook from 
+30.183871579402   SN.node[0].Application                   TSTP Data packet received with value 0
+30.322327690311   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2820)
+
+30.322327690311   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2820)
+
+30.322327690311   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2820)
+
+30.322327690311   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2820)
+
+30.323777670723   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2820)
+
+30.323777670723   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2820)
+
+30.323777670723   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2820)
+
+30.323777670723   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2820)
+
+30.323777670723   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab2820)
+
+30.323777670723   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab2820)
+
+30.323777670723   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab2820)
+
+30.323777670723   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab2820)
+
+30.335909977745   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab3190)
+
+30.335909977745   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab3190)
+
+30.335909977745   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab3190)
+
+30.335909977745   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab3190)
+
+30.469308102529   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab3190)
+
+30.469308102529   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab3190)
+
+30.469308102529   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab3190)
+
+30.469308102529   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab3190)
+
+30.469308102529   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab3190)
+
+30.474383036461   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab3190)
+
+30.474383036461   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab3190)
+
+30.474383036461   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab3190)
+
+30.474383036461   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab3190)
+
+30.478989995289   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab3190)
+
+30.478989995289   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab3190)
+
+30.478989995289   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab3190)
+
+30.478989995289   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab3190)
+
+30.478989995289   SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+30.478989995289   SN.node[0].Communication.Routing         from (100,0,0)
+
+30.478989995289   SN.node[0].Communication.Routing         Found valid peer
+
+30.478989995289   SN.node[0].Communication.Routing         t = 0
+
+30.478989995289   SN.node[0].Communication.Routing         Upack done!
+
+30.478989995289   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab3190)
+
+30.478989995289   SN.node[0].Communication.Routing         TSTP::update:response=0xab3190 => {v=0,t=R,co=d,tr=0,s=3,ot=30002095,o=(100,0,0),lt=3047649632,l=(100,0,0)},u={D:l=0},e=0,x=30000000,d=2
+
+30.478989995289   SN.node[0].Communication.Routing         response->time() = 30002095
+30.478989995289   SN.node[0].Communication.Routing         now() = 30479419
+30.478989995289   SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xab3190)
+30.478989995289   SN.node[0].Communication.Routing         Received [TSTP data hook] from MAC layer. src = 0
+30.478989995289   SN.node[0].Application                   (ApplicationPacket)TSTP data hook from 
+30.478989995289   SN.node[0].Application                   TSTP Data packet received with value 2
+30.621706421793   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab3440)
+
+30.621706421793   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab3440)
+
+30.621706421793   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab3440)
+
+30.621706421793   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab3440)
+
+30.764480259271   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2320)
+
+30.764480259271   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2320)
+
+30.764480259271   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2320)
+
+30.764480259271   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2320)
+
+30.764480259271   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2320)
+
+30.766655228099   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab2320)
+
+30.766655228099   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab2320)
+
+30.766655228099   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab2320)
+
+30.766655228099   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab2320)
+
+30.771005175755   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2320)
+
+30.771005175755   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2320)
+
+30.771005175755   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2320)
+
+30.771005175755   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2320)
+
+30.906110304263   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab3190)
+
+30.906110304263   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab3190)
+
+30.906110304263   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab3190)
+
+30.906110304263   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab3190)
+
+30.906110304263   SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+30.906110304263   SN.node[0].Communication.Routing         from (100,0,0)
+
+30.906110304263   SN.node[0].Communication.Routing         Found valid peer
+
+30.906110304263   SN.node[0].Communication.Routing         t = 0
+
+30.906110304263   SN.node[0].Communication.Routing         Upack done!
+
+30.906110304263   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab3190)
+
+30.906110304263   SN.node[0].Communication.Routing         TSTP::update:response=0xab3190 => {v=0,t=R,co=d,tr=0,s=3,ot=30002095,o=(100,0,0),lt=3090362263,l=(100,0,0)},u={D:l=0},e=0,x=30000000,d=2
+
+30.906110304263   SN.node[0].Communication.Routing         response->time() = 30002095
+30.906110304263   SN.node[0].Communication.Routing         now() = 30906545
+30.906110304263   SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xab3190)
+31.044566392554   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab3190)
+
+31.044566392554   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab3190)
+
+31.044566392554   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab3190)
+
+31.044566392554   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab3190)
+
+31.04891633379    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xa8a2d0)
+
+31.04891633379    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xa8a2d0)
+
+31.04891633379    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xa8a2d0)
+
+31.04891633379    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xa8a2d0)
+
+31.04891633379    SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab3190)
+
+31.04891633379    SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab3190)
+
+31.04891633379    SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab3190)
+
+31.04891633379    SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab3190)
+
+31.192014102486   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.192014102486   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.192014102486   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.192014102486   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.192014102486   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.196364031132   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab3190)
+
+31.196364031132   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab3190)
+
+31.196364031132   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab3190)
+
+31.196364031132   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab3190)
+
+31.196364031132   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab29c0)
+
+31.196364031132   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab29c0)
+
+31.196364031132   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab29c0)
+
+31.196364031132   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab29c0)
+
+31.203145969778   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.203145969778   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.203145969778   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.203145969778   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.203145969778   SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+31.203145969778   SN.node[0].Communication.Routing         from (0,100,0)
+
+31.203145969778   SN.node[0].Communication.Routing         Found valid peer
+
+31.203145969778   SN.node[0].Communication.Routing         t = 0
+
+31.203145969778   SN.node[0].Communication.Routing         Upack done!
+
+31.203145969778   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xa8a2d0)
+
+31.203145969778   SN.node[0].Communication.Routing         TSTP::update:response=0xa8a2d0 => {v=0,t=R,co=d,tr=0,s=3,ot=30001067,o=(0,100,0),lt=3120066245,l=(0,100,0)},u={D:l=0},e=0,x=30000000,d=1
+
+31.203145969778   SN.node[0].Communication.Routing         response->time() = 30001067
+31.203145969778   SN.node[0].Communication.Routing         now() = 31203585
+31.203145969778   SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xa8a2d0)
+31.203145969778   SN.node[0].Communication.Routing         Received [TSTP data hook] from MAC layer. src = 0
+31.203145969778   SN.node[0].Application                   (ApplicationPacket)TSTP data hook from 
+31.203145969778   SN.node[0].Application                   TSTP Data packet received with value 1
+31.34159840862    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab29c0)
+
+31.34159840862    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab29c0)
+
+31.34159840862    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab29c0)
+
+31.34159840862    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab29c0)
+
+31.345948339855   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2820)
+
+31.345948339855   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2820)
+
+31.345948339855   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2820)
+
+31.345948339855   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2820)
+
+31.345948339855   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab29c0)
+
+31.345948339855   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab29c0)
+
+31.345948339855   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab29c0)
+
+31.345948339855   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab29c0)
+
+40.000286081985   SN.node[3].Application                   Sending packet with value 3
+40.000286081985   SN.node[3].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+40.000286081985   SN.node[3].Communication.Routing         Received [GeoSync Data packet] from application layer
+40.000286081985   SN.node[3].Communication.Routing         TSTP::Locator::marshal(buf=0xab29c0)
+
+40.000286081985   SN.node[3].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab29c0)
+
+40.000286081985   SN.node[3].Communication.Routing         TSTP::Router::marshal(buf=0xab29c0)
+
+40.000286081985   SN.node[3].Communication.Routing         TSTP::Security::marshal(buf=0xab29c0)
+
+40.000527780378   SN.node[2].Application                   Sending packet with value 4
+40.000527780378   SN.node[2].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+40.000527780378   SN.node[2].Communication.Routing         Received [GeoSync Data packet] from application layer
+40.000527780378   SN.node[2].Communication.Routing         TSTP::Locator::marshal(buf=0xab2320)
+
+40.000527780378   SN.node[2].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab2320)
+
+40.000527780378   SN.node[2].Communication.Routing         TSTP::Router::marshal(buf=0xab2320)
+
+40.000527780378   SN.node[2].Communication.Routing         TSTP::Security::marshal(buf=0xab2320)
+
+40.001898038288   SN.node[1].Application                   Sending packet with value 5
+40.001898038288   SN.node[1].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+40.001898038288   SN.node[1].Communication.Routing         Received [GeoSync Data packet] from application layer
+40.001898038288   SN.node[1].Communication.Routing         TSTP::Locator::marshal(buf=0xab1bd0)
+
+40.001898038288   SN.node[1].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab1bd0)
+
+40.001898038288   SN.node[1].Communication.Routing         TSTP::Router::marshal(buf=0xab1bd0)
+
+40.001898038288   SN.node[1].Communication.Routing         TSTP::Security::marshal(buf=0xab1bd0)
+
+40.006807337376   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab10b0)
+
+40.006807337376   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab10b0)
+
+40.006807337376   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab10b0)
+
+40.006807337376   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab10b0)
+
+40.008257314786   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab10b0)
+
+40.008257314786   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab10b0)
+
+40.008257314786   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab10b0)
+
+40.008257314786   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab10b0)
+
+40.142380430886   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab10b0)
+
+40.142380430886   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab10b0)
+
+40.142380430886   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab10b0)
+
+40.142380430886   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab10b0)
+
+40.142380430886   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab10b0)
+
+40.151337334426   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2820)
+
+40.151337334426   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2820)
+
+40.151337334426   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2820)
+
+40.151337334426   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2820)
+
+40.151337334426   SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+40.151337334426   SN.node[0].Communication.Routing         from (100,100,0)
+
+40.151337334426   SN.node[0].Communication.Routing         Found valid peer
+
+40.151337334426   SN.node[0].Communication.Routing         t = 0
+
+40.151337334426   SN.node[0].Communication.Routing         Upack done!
+
+40.151337334426   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2820)
+
+40.151337334426   SN.node[0].Communication.Routing         TSTP::update:response=0xab2820 => {v=0,t=R,co=d,tr=0,s=3,ot=40000848,o=(100,100,0),lt=4014897972,l=(100,100,0)},u={D:l=0},e=0,x=30000000,d=3
+
+40.151337334426   SN.node[0].Communication.Routing         response->time() = 40000848
+40.151337334426   SN.node[0].Communication.Routing         now() = 40151902
+40.151337334426   SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xab2820)
+40.151337334426   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2820)
+
+40.151337334426   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2820)
+
+40.151337334426   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2820)
+
+40.151337334426   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2820)
+
+40.151337334426   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab2820)
+
+40.151337334426   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab2820)
+
+40.151337334426   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab2820)
+
+40.151337334426   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab2820)
+
+40.151337334426   SN.node[0].Communication.Routing         Received [TSTP data hook] from MAC layer. src = 0
+40.151337334426   SN.node[0].Application                   (ApplicationPacket)TSTP data hook from 
+40.151337334426   SN.node[0].Application                   TSTP Data packet received with value 3
+40.2897897064     SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xaa2750)
+
+40.2897897064     SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xaa2750)
+
+40.2897897064     SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xaa2750)
+
+40.2897897064     SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xaa2750)
+
+40.291239686812   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab29c0)
+
+40.291239686812   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab29c0)
+
+40.291239686812   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab29c0)
+
+40.291239686812   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab29c0)
+
+40.291239686812   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab2820)
+
+40.291239686812   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab2820)
+
+40.291239686812   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab2820)
+
+40.291239686812   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab2820)
+
+40.441846086863   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2690)
+
+40.441846086863   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2690)
+
+40.441846086863   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2690)
+
+40.441846086863   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2690)
+
+40.731360252293   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xaa86c0)
+
+40.731360252293   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xaa86c0)
+
+40.731360252293   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xaa86c0)
+
+40.731360252293   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xaa86c0)
+
+40.732810234845   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xaa86c0)
+
+40.732810234845   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xaa86c0)
+
+40.732810234845   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xaa86c0)
+
+40.732810234845   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xaa86c0)
+
+40.862583408249   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.862583408249   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.862583408249   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.862583408249   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.862583408249   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.873715283561   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.873715283561   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.873715283561   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.873715283561   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.873715283561   SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+40.873715283561   SN.node[0].Communication.Routing         from (100,0,0)
+
+40.873715283561   SN.node[0].Communication.Routing         Found valid peer
+
+40.873715283561   SN.node[0].Communication.Routing         t = 0
+
+40.873715283561   SN.node[0].Communication.Routing         Upack done!
+
+40.873715283561   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xaa86c0)
+
+40.873715283561   SN.node[0].Communication.Routing         TSTP::update:response=0xaa86c0 => {v=0,t=R,co=d,tr=0,s=3,ot=40002460,o=(100,0,0),lt=4087136771,l=(100,0,0)},u={D:l=0},e=0,x=30000000,d=5
+
+40.873715283561   SN.node[0].Communication.Routing         response->time() = 40002460
+40.873715283561   SN.node[0].Communication.Routing         now() = 40874290
+40.873715283561   SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xaa86c0)
+40.873715283561   SN.node[0].Communication.Routing         Received [TSTP data hook] from MAC layer. src = 0
+40.873715283561   SN.node[0].Application                   (ApplicationPacket)TSTP data hook from 
+40.873715283561   SN.node[0].Application                   TSTP Data packet received with value 5
+40.87804460628    SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xaa86c0)
+
+40.87804460628    SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xaa86c0)
+
+40.87804460628    SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xaa86c0)
+
+40.87804460628    SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xaa86c0)
+
+41.012167714382   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xaa86c0)
+
+41.012167714382   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xaa86c0)
+
+41.012167714382   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xaa86c0)
+
+41.012167714382   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xaa86c0)
+
+41.016517655618   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.016517655618   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.016517655618   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.016517655618   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.159805517971   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.159805517971   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.159805517971   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.159805517971   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.159805517971   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.164155466616   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1bd0)
+
+41.164155466616   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1bd0)
+
+41.164155466616   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1bd0)
+
+41.164155466616   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1bd0)
+
+41.164155466616   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.164155466616   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.164155466616   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.164155466616   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.17021241382    SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.17021241382    SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.17021241382    SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.17021241382    SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.17021241382    SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+41.17021241382    SN.node[0].Communication.Routing         from (0,100,0)
+
+41.17021241382    SN.node[0].Communication.Routing         Found valid peer
+
+41.17021241382    SN.node[0].Communication.Routing         t = 0
+
+41.17021241382    SN.node[0].Communication.Routing         Upack done!
+
+41.17021241382    SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab1bd0)
+
+41.17021241382    SN.node[0].Communication.Routing         TSTP::update:response=0xab1bd0 => {v=0,t=R,co=d,tr=0,s=3,ot=40001089,o=(0,100,0),lt=4116786897,l=(0,100,0)},u={D:l=0},e=0,x=30000000,d=4
+
+41.17021241382    SN.node[0].Communication.Routing         response->time() = 40001089
+41.17021241382    SN.node[0].Communication.Routing         now() = 41170791
+41.17021241382    SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xab1bd0)
+41.17021241382    SN.node[0].Communication.Routing         Received [TSTP data hook] from MAC layer. src = 0
+41.17021241382    SN.node[0].Application                   (ApplicationPacket)TSTP data hook from 
+41.17021241382    SN.node[0].Application                   TSTP Data packet received with value 4
+41.308664813898   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1bd0)
+
+41.308664813898   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1bd0)
+
+41.308664813898   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1bd0)
+
+41.308664813898   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1bd0)
+
+41.313014755134   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab1bd0)
+
+41.313014755134   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab1bd0)
+
+41.313014755134   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab1bd0)
+
+41.313014755134   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab1bd0)
+
+41.313014755134   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.313014755134   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.313014755134   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1bd0)
+
+41.313014755134   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1bd0)
+
+50.000107602481   SN.node[3].Application                   Sending packet with value 6
+50.000107602481   SN.node[3].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+50.000107602481   SN.node[3].Communication.Routing         Received [GeoSync Data packet] from application layer
+50.000107602481   SN.node[3].Communication.Routing         TSTP::Locator::marshal(buf=0xab2320)
+
+50.000107602481   SN.node[3].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab2320)
+
+50.000107602481   SN.node[3].Communication.Routing         TSTP::Router::marshal(buf=0xab2320)
+
+50.000107602481   SN.node[3].Communication.Routing         TSTP::Security::marshal(buf=0xab2320)
+
+50.000409725472   SN.node[2].Application                   Sending packet with value 7
+50.000409725472   SN.node[2].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+50.000409725472   SN.node[2].Communication.Routing         Received [GeoSync Data packet] from application layer
+50.000409725472   SN.node[2].Communication.Routing         TSTP::Locator::marshal(buf=0xaa86c0)
+
+50.000409725472   SN.node[2].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xaa86c0)
+
+50.000409725472   SN.node[2].Communication.Routing         TSTP::Router::marshal(buf=0xaa86c0)
+
+50.000409725472   SN.node[2].Communication.Routing         TSTP::Security::marshal(buf=0xaa86c0)
+
+50.00212254786    SN.node[1].Application                   Sending packet with value 8
+50.00212254786    SN.node[1].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+50.00212254786    SN.node[1].Communication.Routing         Received [GeoSync Data packet] from application layer
+50.00212254786    SN.node[1].Communication.Routing         TSTP::Locator::marshal(buf=0xab1f50)
+
+50.00212254786    SN.node[1].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab1f50)
+
+50.00212254786    SN.node[1].Communication.Routing         TSTP::Router::marshal(buf=0xab1f50)
+
+50.00212254786    SN.node[1].Communication.Routing         TSTP::Security::marshal(buf=0xab1f50)
+
+50.116468328121   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab27e0)
+
+50.116468328121   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab27e0)
+
+50.116468328121   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab27e0)
+
+50.116468328121   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab27e0)
+
+50.251316438309   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab3050)
+
+50.251316438309   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab3050)
+
+50.251316438309   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab3050)
+
+50.251316438309   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab3050)
+
+50.251316438309   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab3050)
+
+50.399504928585   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xaa26a0)
+
+50.399504928585   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xaa26a0)
+
+50.399504928585   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xaa26a0)
+
+50.399504928585   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xaa26a0)
+
+50.400229915645   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab27e0)
+
+50.400229915645   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab27e0)
+
+50.400229915645   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab27e0)
+
+50.400229915645   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab27e0)
+
+50.403854860945   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab27e0)
+
+50.403854860945   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab27e0)
+
+50.403854860945   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab27e0)
+
+50.403854860945   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab27e0)
+
+50.403854860945   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab27e0)
+
+50.409911816245   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xaa26a0)
+
+50.409911816245   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xaa26a0)
+
+50.409911816245   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xaa26a0)
+
+50.409911816245   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xaa26a0)
+
+50.409911816245   SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+50.409911816245   SN.node[0].Communication.Routing         from (100,100,0)
+
+50.409911816245   SN.node[0].Communication.Routing         Found valid peer
+
+50.409911816245   SN.node[0].Communication.Routing         t = 0
+
+50.409911816245   SN.node[0].Communication.Routing         Upack done!
+
+50.409911816245   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xaa26a0)
+
+50.409911816245   SN.node[0].Communication.Routing         TSTP::update:response=0xaa26a0 => {v=0,t=R,co=d,tr=0,s=3,ot=50000810,o=(100,100,0),lt=5040769841,l=(100,100,0)},u={D:l=0},e=0,x=30000000,d=6
+
+50.409911816245   SN.node[0].Communication.Routing         response->time() = 50000810
+50.409911816245   SN.node[0].Communication.Routing         now() = 50410621
+50.409911816245   SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xaa26a0)
+50.409911816245   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xaa26a0)
+
+50.409911816245   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xaa26a0)
+
+50.409911816245   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xaa26a0)
+
+50.409911816245   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xaa26a0)
+
+50.409911816245   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xaa26a0)
+
+50.409911816245   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xaa26a0)
+
+50.409911816245   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xaa26a0)
+
+50.409911816245   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xaa26a0)
+
+50.409911816245   SN.node[0].Communication.Routing         Received [TSTP data hook] from MAC layer. src = 0
+50.409911816245   SN.node[0].Application                   (ApplicationPacket)TSTP data hook from 
+50.409911816245   SN.node[0].Application                   TSTP Data packet received with value 6
+50.548354155493   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab3510)
+
+50.548354155493   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab3510)
+
+50.548354155493   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab3510)
+
+50.548354155493   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab3510)
+
+50.552704096729   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2320)
+
+50.552704096729   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2320)
+
+50.552704096729   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2320)
+
+50.552704096729   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2320)
+
+50.552704096729   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1d40)
+
+50.552704096729   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1d40)
+
+50.552704096729   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1d40)
+
+50.552704096729   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1d40)
+
+50.563406156285   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2320)
+
+50.563406156285   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2320)
+
+50.563406156285   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2320)
+
+50.563406156285   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2320)
+
+50.697529275032   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2320)
+
+50.697529275032   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2320)
+
+50.697529275032   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2320)
+
+50.697529275032   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2320)
+
+50.697529275032   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2320)
+
+50.702604195119   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2320)
+
+50.702604195119   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2320)
+
+50.702604195119   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2320)
+
+50.702604195119   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2320)
+
+50.707936150883   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2320)
+
+50.707936150883   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2320)
+
+50.707936150883   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2320)
+
+50.707936150883   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2320)
+
+50.707936150883   SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+50.707936150883   SN.node[0].Communication.Routing         from (0,100,0)
+
+50.707936150883   SN.node[0].Communication.Routing         Found valid peer
+
+50.707936150883   SN.node[0].Communication.Routing         t = 0
+
+50.707936150883   SN.node[0].Communication.Routing         Upack done!
+
+50.707936150883   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2320)
+
+50.707936150883   SN.node[0].Communication.Routing         TSTP::update:response=0xab2320 => {v=0,t=R,co=d,tr=0,s=3,ot=50001112,o=(0,100,0),lt=5070572676,l=(0,100,0)},u={D:l=0},e=0,x=30000000,d=7
+
+50.707936150883   SN.node[0].Communication.Routing         response->time() = 50001112
+50.707936150883   SN.node[0].Communication.Routing         now() = 50708650
+50.707936150883   SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xab2320)
+50.707936150883   SN.node[0].Communication.Routing         Received [TSTP data hook] from MAC layer. src = 0
+50.707936150883   SN.node[0].Application                   (ApplicationPacket)TSTP data hook from 
+50.707936150883   SN.node[0].Application                   TSTP Data packet received with value 7
+50.712265462856   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab2320)
+
+50.712265462856   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab2320)
+
+50.712265462856   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab2320)
+
+50.712265462856   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab2320)
+
+50.846388570958   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab2320)
+
+50.846388570958   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab2320)
+
+50.846388570958   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab2320)
+
+50.846388570958   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab2320)
+
+50.850738512194   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2320)
+
+50.850738512194   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2320)
+
+50.850738512194   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2320)
+
+50.850738512194   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2320)
+
+50.994012222781   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2320)
+
+50.994012222781   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2320)
+
+50.994012222781   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2320)
+
+50.994012222781   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2320)
+
+50.994012222781   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2320)
+
+50.998362150437   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab2320)
+
+50.998362150437   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab2320)
+
+50.998362150437   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab2320)
+
+50.998362150437   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab2320)
+
+50.998362150437   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab2320)
+
+50.998362150437   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab2320)
+
+50.998362150437   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab2320)
+
+50.998362150437   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab2320)
+
+51.004419101817   SN.node[0].Communication.Routing         TSTP::Locator::update(obs=0xa8ce50,buf=0xab2320)
+
+51.004419101817   SN.node[0].Communication.Routing         TSTP::Timekeeper::update(obs=0xa8ce50,buf=0xab2320)
+
+51.004419101817   SN.node[0].Communication.Routing         TSTP::Router::update(obs=0xa8ce50,buf=0xab2320)
+
+51.004419101817   SN.node[0].Communication.Routing         TSTP::Security::update(obs=0xa8ce50,buf=0xab2320)
+
+51.004419101817   SN.node[0].Communication.Routing         TSTP::Security::update(): Response message received
+
+51.004419101817   SN.node[0].Communication.Routing         from (100,0,0)
+
+51.004419101817   SN.node[0].Communication.Routing         Found valid peer
+
+51.004419101817   SN.node[0].Communication.Routing         t = 0
+
+51.004419101817   SN.node[0].Communication.Routing         Upack done!
+
+51.004419101817   SN.node[0].Communication.Routing         TSTP::update(obs=0xa8ce50,buf=0xab2320)
+
+51.004419101817   SN.node[0].Communication.Routing         TSTP::update:response=0xab2320 => {v=0,t=R,co=d,tr=0,s=3,ot=50002825,o=(100,0,0),lt=5100221392,l=(100,0,0)},u={D:l=0},e=0,x=30000000,d=8
+
+51.004419101817   SN.node[0].Communication.Routing         response->time() = 50002825
+51.004419101817   SN.node[0].Communication.Routing         now() = 51005137
+51.004419101817   SN.node[0].Communication.Routing         TSTP::notify(s=0,b=0xab2320)
+51.004419101817   SN.node[0].Communication.Routing         Received [TSTP data hook] from MAC layer. src = 0
+51.004419101817   SN.node[0].Application                   (ApplicationPacket)TSTP data hook from 
+51.004419101817   SN.node[0].Application                   TSTP Data packet received with value 8
+51.142871518707   SN.node[1].Communication.Routing         TSTP::Locator::update(obs=0xa98ad0,buf=0xab3510)
+
+51.142871518707   SN.node[1].Communication.Routing         TSTP::Timekeeper::update(obs=0xa98ad0,buf=0xab3510)
+
+51.142871518707   SN.node[1].Communication.Routing         TSTP::Router::update(obs=0xa98ad0,buf=0xab3510)
+
+51.142871518707   SN.node[1].Communication.Routing         TSTP::Security::update(obs=0xa98ad0,buf=0xab3510)
+
+51.147221459943   SN.node[2].Communication.Routing         TSTP::Locator::update(obs=0xa9dd80,buf=0xab1f50)
+
+51.147221459943   SN.node[2].Communication.Routing         TSTP::Timekeeper::update(obs=0xa9dd80,buf=0xab1f50)
+
+51.147221459943   SN.node[2].Communication.Routing         TSTP::Router::update(obs=0xa9dd80,buf=0xab1f50)
+
+51.147221459943   SN.node[2].Communication.Routing         TSTP::Security::update(obs=0xa9dd80,buf=0xab1f50)
+
+51.147221459943   SN.node[3].Communication.Routing         TSTP::Locator::update(obs=0xaa2e80,buf=0xab1f50)
+
+51.147221459943   SN.node[3].Communication.Routing         TSTP::Timekeeper::update(obs=0xaa2e80,buf=0xab1f50)
+
+51.147221459943   SN.node[3].Communication.Routing         TSTP::Router::update(obs=0xaa2e80,buf=0xab1f50)
+
+51.147221459943   SN.node[3].Communication.Routing         TSTP::Security::update(obs=0xaa2e80,buf=0xab1f50)
+
+59.999929122977   SN.node[3].Application                   Sending packet with value 9
+59.999929122977   SN.node[3].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+59.999929122977   SN.node[3].Communication.Routing         Received [GeoSync Data packet] from application layer
+59.999929122977   SN.node[3].Communication.Routing         TSTP::Locator::marshal(buf=0xab2320)
+
+59.999929122977   SN.node[3].Communication.Routing         TSTP::Timekeeper::marshal(buf=0xab2320)
+
+59.999929122977   SN.node[3].Communication.Routing         TSTP::Router::marshal(buf=0xab2320)
+
+59.999929122977   SN.node[3].Communication.Routing         TSTP::Security::marshal(buf=0xab2320)
+
+60.000291670566   SN.node[2].Application                   Sending packet with value 10
+60.000291670566   SN.node[2].Application                   Sending [GeoSync Data packet] of size 4 bytes to communication layer
+60.000291670566   SN.node[0].Application                   r
+60.000291670566   SN.node[0].Application                   r
+60.000291670566   SN.node[0].Application                   r
+60.000291670566   SN.node[0].Communication.Routing         TSTP::~TSTP()
+60.000291670566   SN.node[0].Communication.Routing         TSTP::~Security()
+
+60.000291670566   SN.node[0].Communication.Routing         TSTP::~Router()
+
+60.000291670566   SN.node[0].Communication.Routing         TSTP::~Locator()
+
+60.000291670566   SN.node[0].Communication.Routing         TSTP::~Timekeeper()
+
+60.000291670566   SN.node[1].Communication.Routing         TSTP::~TSTP()
+60.000291670566   SN.node[1].Communication.Routing         TSTP::~Security()
+
+60.000291670566   SN.node[1].Communication.Routing         TSTP::~Router()
+
+60.000291670566   SN.node[1].Communication.Routing         TSTP::~Locator()
+
+60.000291670566   SN.node[1].Communication.Routing         TSTP::~Timekeeper()
+
+60.000291670566   SN.node[2].Communication.Routing         TSTP::~TSTP()
+60.000291670566   SN.node[2].Communication.Routing         TSTP::~Security()
+
+60.000291670566   SN.node[2].Communication.Routing         TSTP::~Router()
+
+60.000291670566   SN.node[2].Communication.Routing         TSTP::~Locator()
+
+60.000291670566   SN.node[2].Communication.Routing         TSTP::~Timekeeper()
+
+60.000291670566   SN.node[3].Communication.Routing         TSTP::~TSTP()
+60.000291670566   SN.node[3].Communication.Routing         TSTP::~Security()
+
+60.000291670566   SN.node[3].Communication.Routing         TSTP::~Router()
+
+60.000291670566   SN.node[3].Communication.Routing         TSTP::~Locator()
+
+60.000291670566   SN.node[3].Communication.Routing         TSTP::~Timekeeper()
+
