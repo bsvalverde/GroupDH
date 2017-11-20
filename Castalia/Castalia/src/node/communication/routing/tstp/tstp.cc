@@ -835,9 +835,16 @@ void TSTP::Security::update(NIC::Observed * obs, NIC::Protocol prot, Buffer * bu
                                 Round_Key round_key = message->round_key();
                                 round_key = _gdh.insert_key(round_key);
                                 _tstp->trace() << "We calculated the final key! key = " << round_key << endl;
+                                TSTP::Security * sink;
+                                for(unsigned int i = 0; i < _tstp->_units; i++) {
+                                    if(_tstp->_instances[i]->_sink) {
+                                        sink = _tstp->_instances[i]->_security;
+                                        break;
+                                    }
+                                }
                                 for(unsigned int i = 0; i < _tstp->_units; i++){
                                     if(i != _tstp->_unit){
-                                        Peer * p = new Peer(_id, Region(_tstp->_instances[i]->here(), 0, 0, -1), _tstp);
+                                        Peer * p = new Peer(sink->_id, Region(_tstp->_instances[i]->here(), 0, 0, -1), _tstp);
                                         p->master_secret(round_key.numerize());
                                         _trusted_peers.insert(p->link());
                                     }

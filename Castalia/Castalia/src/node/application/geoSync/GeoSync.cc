@@ -252,7 +252,7 @@ bool GeoSync::isDup(int sequence_number)
 void GeoSync::processTSTPDataPacket(ApplicationPacket * pkt)
 {
     if(pkt) {
-        trace() << "TSTP Data packet received";
+        trace() << "TSTP Data packet received with value " << pkt->getData();
 
         receivedDataPackets++;
         globalReceivedDataPackets++;
@@ -388,6 +388,8 @@ void GeoSync::sendData()
     pkt->setData(dataSource->value());
     pkt->setSequenceNumber(globalSentPackets);
     pkt->setByteLength(dataPacketLength);
+
+    trace() << "Sending packet with value " << pkt->getData();
 
     globalSentDataPackets++;
     globalSentPackets++;
